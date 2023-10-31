@@ -1,4 +1,4 @@
-# fishpi
+# FishPi
 piRNA TE analysis tool
 
 Project Title: FishPi - piRNA Sequence Analyzer
