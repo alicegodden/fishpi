@@ -3,17 +3,18 @@ piRNA TE analysis tool
 
 Project Title: FishPi - piRNA Sequence Analyzer
 
-Description:
+# Description:
 FishPi is a Python-based piRNA sequence analysis tool designed to identify complementary transposable element (TE) sequences in a given piRNA sequence. This project combines the power of various Python libraries, including tkinter for the user interface, matplotlib for data visualization, and PIL (Pillow) for image rendering.
 
-Features:
+# Features:
 
 Analyze piRNA sequences for complementary TE matches.
 Classify TE types based on keywords.
 Generate a bar chart showing complementary TE counts by type.
 Export the list of complementary TE sequences to a CSV file.
 Export the bar chart as an image file.
-How to Use FishPi:
+
+# How to Use FishPi:
 
 Input piRNA Sequence: Launch the FishPi application. Enter your piRNA sequence in the provided text field and click the "Submit analysis" button.
 
@@ -21,7 +22,7 @@ View Analysis Results: FishPi will analyze the piRNA sequence and display the re
 
 Export Data: You can export the complementary TE sequences to a CSV file or save the bar chart as an image file using the export buttons provided in the popup window.
 
-Requirements:
+# Requirements:
 
 Python 3.x
 Python libraries: tkinter, matplotlib, Pillow (PIL)
@@ -36,10 +37,10 @@ Prepare the TE sequence file and place it in the same directory as FishPi.
 
 Run FishPi by executing the Python script (e.g., python fishpi.py).
 
-License:
+# License:
 This project is distributed under the GNU General Public License (GPL), which ensures that it remains open source and freely accessible for use and modification.
 
-Author:
+# Author & Contact:
 Dr Alice M. Godden
 
 Contact:
