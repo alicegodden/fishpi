@@ -39,7 +39,7 @@ Run FishPi by executing the Python script (e.g., python fishpi.py).
 # License:
 This project is distributed under the GNU General Public License (GPL), which ensures that it remains open source and freely accessible for use and modification.
 
-# Author & Contact:
+# Authors & Contact:
 Dr. Alice M. Godden
 
 Dr. Benjamin Rix
