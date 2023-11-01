@@ -41,14 +41,17 @@ This project is distributed under the GNU General Public License (GPL), which en
 
 # Author & Contact:
 Dr. Alice M. Godden
+
 Dr. Benjamin Rix
+
 Prof. Simone Immler
+
 University of East Anglia, School of Biological Sciences, NR4 7TJ, United Kingdom
 
 Contact:
 
 Email: alice.godden@uea.ac.uk
-Feel free to contribute to this project, report issues, or suggest improvements. FishPi is designed to make piRNA sequence analysis accessible and informative for researchers and bioinformaticians.
+Feel free to report issues, or suggest improvements. FishPi is designed to make piRNA sequence analysis accessible and informative for researchers and bioinformaticians.
 
 Note:
 The "fishpi.png" image file is used for the graphical interface.
