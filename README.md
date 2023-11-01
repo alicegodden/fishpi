@@ -37,7 +37,7 @@ Prepare the TE sequence file and place it in the same directory as FishPi.
 Run FishPi by executing the Python script (e.g., python fishpi.py).
 
 # License:
-This project is distributed under the GNU General Public License (GPL), which ensures that it remains open source and freely accessible for use and modification.
+This project is distributed under the GNU General Public License (GPL), which ensures that it remains open source and freely accessible for use.
 
 # Authors & Contact:
 Dr. Alice M. Godden
