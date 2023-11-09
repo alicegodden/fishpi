@@ -1,3 +1,4 @@
+![GitHub Logo](https://github.com/alicegodden/fishpi/blob/main/fishpi.png)
 # FishPi
 piRNA TE analysis tool
 
