@@ -19,7 +19,7 @@ Export the bar chart as an image file.
 
 Python 3.11
 Python libraries: tkinter, matplotlib, Pillow (PIL)
-Python can be found already installed on most Linux systems, Windows users may use Python tools such as PyCharm Community Edition here: https://www.jetbrains.com/pycharm/download/ 
+FishPi was designed to be executed from the Linux command line terminal on Mac. Windows and also Mac users may use Python tools such as PyCharm Community Edition here: https://www.jetbrains.com/pycharm/download/ 
 
 If you would like to use FishPi on a Zebrafish reference genome other than GRCz11, please prepare your "GRCz11.teseqs.fasta" file by following the instructions written below. 
 
