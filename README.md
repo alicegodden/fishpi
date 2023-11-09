@@ -1,5 +1,7 @@
 # FishPi
-Zebrafish piRNA:Transposable element complementarity prediction tool. 
+piRNA TE analysis tool
+
+Project Title: FishPi - piRNA Sequence Analyzer
 
 # Description:
 FishPi is a Python-based piRNA sequence analysis tool designed to identify complementary transposable element (TE) sequences in a given piRNA sequence. This project combines the power of various Python libraries, including tkinter for the graphic user interface, matplotlib for data visualization, and PIL (Pillow) for image rendering. All results and bar charts can be exported for downstream analyses and publication in hi-resolution.
@@ -29,29 +31,29 @@ TE sequence file (e.g., "GRCz11.teseqs.fasta") for TE matching
 # Getting Started:
 
 Clone or download the FishPi repository to your local machine.
-
 Ensure you have Python and the required libraries installed.
+Prepare the TE sequence file and place it in the same directory as FishPi (only relevant if you want to use TE's not in GRCz11 annotation).
 
-Prepare the TE sequence file and place it in the same directory as FishPi.
+# Install and use Fishpi (Linux)
 
-Run FishPi by executing the Python script (e.g., python fishpi.py).
+```
+$ git clone https://github.com/alicegodden/fishpi/tree/fishpi/
+$ cd fishpi
+$ python fishpi.py # opens the GUI to use FishPi
+
+```
+
 
 # License:
-This project is distributed under the GNU General Public License (GPL), which ensures that it remains open source and freely accessible for use.
+This project is distributed under the GNU General Public License (GPL), which ensures that it remains open source and freely accessible for use and modification.
 
-# Authors & Contact:
-Dr. Alice M. Godden
-
-Dr. Benjamin Rix
-
-Prof. Simone Immler
-
-University of East Anglia, School of Biological Sciences, NR4 7TJ, United Kingdom
+# Author & Contact:
+Dr Alice M. Godden
 
 Contact:
 
 Email: alice.godden@uea.ac.uk
-Feel free to report issues, or suggest improvements. FishPi is designed to make piRNA sequence analysis accessible and informative for researchers and bioinformaticians.
+Feel free to contribute to this project, report issues, or suggest improvements. FishPi is designed to make piRNA sequence analysis accessible and informative for researchers and bioinformaticians.
 
 Note:
-The "fishpi.png" image file is used for the graphical interface.
+The "fishpi.png" image file is used for the graphical interface, not essential for the running of the software.
