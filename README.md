@@ -64,7 +64,7 @@ Export Data: You can export the complementary TE sequences to a CSV file or save
 This project is distributed under the GNU General Public License (GPL), which ensures that it remains open source and freely accessible for use and modification.
 
 # Citation:
-Publication of Fishpi to follow, please check back for full citation or contact authors, details below. 
+Publication of Fishpi to follow, please check back for full citation or contact authors, details below. In the meantime please reference this git repository.
 
 # Author & Contact:
 Dr Alice M. Godden
