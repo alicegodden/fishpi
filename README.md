@@ -92,4 +92,4 @@ Email: alice.godden@uea.ac.uk
 Feel free to report issues or suggest improvements. FishPi is designed to make piRNA sequence analysis accessible and informative for researchers and bioinformaticians.
 
 Note:
-The "fishpi.png" image file is used for the graphical interface, not essential for the running of the software.
+The "fishpi.png" image file is used for the graphical interface, if you are running FishPi in Pycharm you will need this image in order for the software to run.
