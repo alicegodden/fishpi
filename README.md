@@ -33,6 +33,7 @@ TE sequence file (e.g., "GRCz11.teseqs.fasta") for TE matching
 Clone or download the FishPi repository to your local machine.
 Ensure you have Python and the required libraries installed.
 Prepare the TE sequence file and place it in the same directory as FishPi (only relevant if you want to use TE's not in GRCz11 annotation).
+Fishpi.py could be run on the command line as described below on Linux, or with Pycharm.
 
 # Install and use Fishpi (Linux)
 
