@@ -12,14 +12,6 @@ Generate a bar chart showing complementary TE counts by type.
 Export the list of complementary TE sequences to a CSV file.
 Export the bar chart as an image file.
 
-# How to Use FishPi:
-
-Input piRNA Sequence: Launch the FishPi application. Enter your piRNA sequence in the provided text field and click the "Submit analysis" button.
-
-View Analysis Results: FishPi will analyze the piRNA sequence and display the results in a popup window. The results include a bar chart showing complementary TE counts by type and the total TE count.
-
-Export Data: You can export the complementary TE sequences to a CSV file or save the bar chart as an image file using the export buttons provided in the popup window.
-
 # Requirements:
 
 Python 3.11
@@ -42,6 +34,14 @@ $ python fishpi.py # opens the GUI to use FishPi
 
 ```
 
+# How to Use FishPi:
+
+Input piRNA Sequence: Launch the FishPi application. Enter your piRNA sequence in the provided text field and click the "Submit analysis" button.
+piRNA sequences can be obtained from your own analyses or from a repository like piRbase: http://bigdata.ibp.ac.cn/piRBase/ 
+
+View Analysis Results: FishPi will analyze the piRNA sequence and display the results in a popup window. The results include a bar chart showing complementary TE counts by type and the total TE count.
+
+Export Data: You can export the complementary TE sequences to a CSV file or save the bar chart as an image file using the export buttons provided in the popup window.
 
 # License:
 This project is distributed under the GNU General Public License (GPL), which ensures that it remains open source and freely accessible for use and modification.
