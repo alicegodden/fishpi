@@ -24,6 +24,8 @@ Clone or download the FishPi repository to your local machine.
 Ensure you have Python and the required libraries installed.
 Prepare the TE sequence file and place it in the same directory as FishPi (only relevant if you want to use TE's not in GRCz11 annotation).
 Fishpi.py could be run on the command line as described below on Linux, or with Pycharm.
+Example output files are based on dre-piRNA-1 5'-TGGTTAGTACTTGGATGGGAGACCGCCTGGG-3', taken from piRBase (http://bigdata.ibp.ac.cn/piRBase/browse.php). 
+
 
 # Install and use Fishpi (Linux)
 
@@ -42,6 +44,8 @@ piRNA sequences can be obtained from your own analyses or from a repository like
 View Analysis Results: FishPi will analyze the piRNA sequence and display the results in a popup window. The results include a bar chart showing complementary TE counts by type and the total TE count.
 
 Export Data: You can export the complementary TE sequences to a CSV file or save the bar chart as an image file using the export buttons provided in the popup window.
+
+![GitHub Logo](https://github.com/alicegodden/fishpi/blob/main/FishPi_GUI.png)
 
 # License:
 This project is distributed under the GNU General Public License (GPL), which ensures that it remains open source and freely accessible for use and modification.
