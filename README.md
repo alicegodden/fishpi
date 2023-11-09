@@ -54,7 +54,7 @@ piRNA sequences can be obtained from your own analyses or from a repository like
 
 View Analysis Results: FishPi will analyze the piRNA sequence and display the results in a popup window. The results include a bar chart showing complementary TE counts by type and the total TE count.
 
-Export Data: You can export the complementary TE sequences to a CSV file or save the bar chart as an image file using the export buttons provided in the popup window, (Figure 1).
+Export Data: You can export the complementary TE sequences to a CSV file and save the bar chart as an image file using the export buttons provided in the popup window, (Figure 1).
 
 
 *Figure 1- Graphic User interface for FishPi and results for dre-piRNA-1*
