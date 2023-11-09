@@ -57,7 +57,7 @@ View Analysis Results: FishPi will analyze the piRNA sequence and display the re
 Export Data: You can export the complementary TE sequences to a CSV file or save the bar chart as an image file using the export buttons provided in the popup window, (Figure 1).
 
 
-*Figure 1- Graphic User interface for FishPi*
+*Figure 1- Graphic User interface for FishPi and results for dre-piRNA-1*
 ![GitHub Logo](https://github.com/alicegodden/fishpi/blob/main/FishPi_GUI.png)
 
 # Output results
