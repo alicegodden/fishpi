@@ -78,7 +78,7 @@ Satellite: 	BRSATI, MOSAT
 
 
 # Licence:
-This project is distributed under the GNU General Public License (GPL), which ensures that it remains open source and freely accessible for use and modification.
+This project is distributed under the GNU General Public License (GPL), which ensures that it remains open source and freely accessible for use.
 
 # Citation:
 Publication of Fishpi to follow, please check back for full citation or contact authors, details below. In the meantime please reference this git repository.
