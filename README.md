@@ -18,6 +18,7 @@ Export the bar chart as an image file.
 
 Python 3.11
 Python libraries: tkinter, matplotlib, Pillow (PIL)
+Python can be found already installed on most Linux systems, Windows users may use Python tools such as PyCharm Community Edition here: https://www.jetbrains.com/pycharm/download/ 
 
 If you would like to use FishPi on a Zebrafish reference genome other than GRCz11, please prepare your "GRCz11.teseqs.fasta" file by following the instructions written below. 
 
@@ -27,7 +28,8 @@ If you would like to use FishPi on a Zebrafish reference genome other than GRCz1
 4. To create the TE-merged reference genome: cat GRCz11.masked.fasta GRCz11.teseqs.1.fasta > GRCz11.teseqs.fishpi.fasta (GRCz11.teseqs.use.fasta). 
 
 
-Clone or download the FishPi repository to your local machine, find the files here: https://github.com/alicegodden/fishpi/releases/tag/FishPi  
+Clone or download the FishPi repository to your local machine, download all files here: https://github.com/alicegodden/fishpi/releases/tag/FishPi  
+You need to make sure you have the GRCz11.teseqs.fasta, fishpi.png and FishPi.py in the area you execute your script, or same directory as you are running your project if using PyCharm.
 Ensure you have Python and the required libraries installed.
 Prepare the TE sequence file and place it in the same directory as FishPi (only relevant if you want to use TE's not in GRCz11 annotation).
 Fishpi.py could be run on the command line as described below on Linux, or with Pycharm.
