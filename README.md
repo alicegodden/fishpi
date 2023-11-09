@@ -6,6 +6,7 @@ Created by Dr. Alice M. Godden & Dr. Benjamin Rix, 2023
 # Description:
 FishPi is a Python-based piRNA sequence analysis tool designed to identify complementary transposable element (TE) sequences in a given piRNA sequence. This project combines the power of various Python libraries, including tkinter for the graphic user interface, matplotlib for data visualization, and PIL (Pillow) for image rendering. All results and bar charts can be exported for downstream analyses and publication in hi-resolution.
 
+
 # Features:
 
 Analyze piRNA sequences for complementary TE matches.
@@ -58,6 +59,16 @@ Export Data: You can export the complementary TE sequences to a CSV file or save
 
 *Figure 1- Graphic User interface for FishPi*
 ![GitHub Logo](https://github.com/alicegodden/fishpi/blob/main/FishPi_GUI.png)
+
+# Output results
+Transposable element species are grouped by class in the bar chart displayed, as in Figure 1 above. 
+The transposable elements covered are grouped as follows:
+DNA:	hAT, Tc1, Tc-Mar, Harbinger, Enspm, Kolobok, Merlin, Crypton, PiggyBac, Dada, Zatar, Ginger, TDR, Polinton, Maverick, Acrobat, Looper, TZF, Angel, Mariner
+LTR:	Gypsy, DIRS, Ngaro, ERV, Pao, Copia, BEL, HERV, Bhikari
+LINE:	L1, L2, L1-Tx1, Rex-Babar, RTE, Penelope, Keno, Rex
+SINE:	Alu, tRNA-V-RTE
+RC:	Helitron
+Satellite: 	BRSATI, MOSAT
 
 
 # Licence:
