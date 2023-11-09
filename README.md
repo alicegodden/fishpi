@@ -25,7 +25,7 @@ Export Data: You can export the complementary TE sequences to a CSV file or save
 # Requirements:
 
 Python 3.11
-Python libraries: tkinter, matplotlib, Pillow (PIL)
+Python libraries: tkinter, matplotlib, Pillow (PIL) and a 
 TE sequence file (e.g., "GRCz11.teseqs.fasta") for TE matching
 
 # Getting Started:
