@@ -32,7 +32,7 @@ TE sequence file (e.g., "GRCz11.teseqs.fasta") for TE matching
 
 Clone or download the FishPi repository to your local machine.
 
-### Install and use Fishpi (Linux)
+# Install and use Fishpi (Linux)
 
 ```
 $ git clone https://github.com/alicegodden/fishpi/tree/fishpi/
