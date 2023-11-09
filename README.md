@@ -1,6 +1,6 @@
 ![GitHub Logo](https://github.com/alicegodden/fishpi/blob/main/fishpi.png)
 # FishPi
-
+Created by Alice Godden & Benjamin Rix, 2023
 # Description:
 FishPi is a Python-based piRNA sequence analysis tool designed to identify complementary transposable element (TE) sequences in a given piRNA sequence. This project combines the power of various Python libraries, including tkinter for the graphic user interface, matplotlib for data visualization, and PIL (Pillow) for image rendering. All results and bar charts can be exported for downstream analyses and publication in hi-resolution.
 
