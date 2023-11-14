@@ -37,7 +37,7 @@ Fishpi.py could be run on the command line as described below on Linux, or with 
 Example output files are based on dre-piRNA-1 5'-TGGTTAGTACTTGGATGGGAGACCGCCTGGG-3', taken from piRBase (http://bigdata.ibp.ac.cn/piRBase/browse.php). 
 
 
-# Install and use Fishpi (Linux)
+# Install and use FishPi (Linux)
 
 ```
 $ git clone https://github.com/alicegodden/fishpi/tree/fishpi/
