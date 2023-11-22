@@ -84,9 +84,9 @@ This project is distributed under the GNU General Public License (GPL), which en
 Publication of Fishpi to follow, please check back for full citation or contact authors, details below. In the meantime please reference this git repository.
 
 # Author & Contact:
-Dr Alice M. Godden, 
+Dr Alice M. Godden
 
-Dr. Benjamin Rix & 
+Dr. Benjamin Rix 
 
 Prof. Simone Immler
 
