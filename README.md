@@ -85,7 +85,9 @@ Publication of Fishpi to follow, please check back for full citation or contact 
 
 # Author & Contact:
 Dr Alice M. Godden
+
 Dr. Benjamin Rix
+
 Prof. Simone Immler
 
 University of East Anglia, School of Biological Sciences, Norwich, United Kingdom, NR4 7TJ
