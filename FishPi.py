@@ -103,7 +103,7 @@ def analyze_sequence():
 
     fig, ax = plt.subplots()
     ax.bar(te_types, counts, color=colors)
-    ax.set_xlabel("TE Class", fontweight='bold')
+    ax.set_xlabel("TE Classification", fontweight='bold')
     ax.set_ylabel("Count", fontweight='bold')
     ax.set_title("Complementary TE Counts by Type", fontweight='bold')
     plt.xticks(fontweight='bold')
