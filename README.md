@@ -61,7 +61,7 @@ Export Data: You can export the complementary TE sequences to a CSV file and sav
 ![GitHub Logo](https://github.com/alicegodden/fishpi/blob/main/FishPi_GUI.png)
 
 # Output results
-Transposable element species are grouped by class in the bar chart displayed, as in Figure 1 above. 
+Transposable element species are grouped by order in the bar chart displayed, as in Figure 1 above. 
 The transposable elements covered are grouped as follows:
 
 DNA:	hAT, Tc1, Tc-Mar, Harbinger, Enspm, Kolobok, Merlin, Crypton, PiggyBac, Dada, Zatar, Ginger, TDR, Polinton, Maverick, Acrobat, Looper, TZF, Angel, Mariner
