@@ -31,7 +31,7 @@ If you would like to use FishPi on a Zebrafish reference genome other than GRCz1
 
 Clone or download the FishPi repository to your local machine, download all files here: https://github.com/alicegodden/fishpi/releases/tag/FishPi  
 You need to make sure you have the GRCz11.teseqs.fasta, fishpi.png and FishPi.py in the area you execute your script, or same directory as you are running your project if using PyCharm.
-Ensure you have Python and the required libraries installed.
+Ensure you have Python v3.11 and the required libraries installed.
 Prepare the TE sequence file and place it in the same directory as FishPi (only relevant if you want to use TE's not in GRCz11 annotation).
 Fishpi.py could be run on the command line as described below on Linux, or with Pycharm.
 Example output files are based on dre-piRNA-1 5'-TGGTTAGTACTTGGATGGGAGACCGCCTGGG-3', taken from piRBase (http://bigdata.ibp.ac.cn/piRBase/browse.php). 
