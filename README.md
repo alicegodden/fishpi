@@ -41,11 +41,9 @@ Example output files are based on dre-piRNA-1 5'-TGGTTAGTACTTGGATGGGAGACCGCCTGGG
 
 ```
 $ git clone [https://github.com/alicegodden/fishpi/tree/fishpi/](https://github.com/alicegodden/fishpi/releases/tag/FishPi)
-$ cd fishpi
+$ cd fishpi # navigate to FishPi directory
 $ python fishpi.py # opens the GUI to use FishPi
 
-$ cd fishpi
-$ python fishpi.py # opens the GUI to use FishPi
 
 ```
 
