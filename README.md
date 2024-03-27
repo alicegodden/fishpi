@@ -24,7 +24,7 @@ FishPi was designed to be executed from the Linux command line terminal on Mac. 
 If you would like to use FishPi on a Zebrafish reference genome other than GRCz11, please prepare your "teseqs.fasta" file by following the same instructions written below, but by selecting appropriate organism on UCSC browser. Also check the piRNA:TE seed rules, as these can be customised to your model organism in the python script behind the FishPi GUI. 
 
 To prepare your GRCz11.teseqs.fasta file:
-1. To generate a fasta file of the TE sequences in Zebrafish reference genome GRCz11 a .bed file was made. The UCSC table genome browser was used to generate the TE.bed file with these options: clade: Vertebrate, group: Variation and Repeats, genome: Zebrafish, assembly: May 2017 GRCz11, track: RepeatMasker, table: rmsk.
+1. To generate a fasta file of the TE sequences in Zebrafish reference genome GRCz11 first make a .bed file. The UCSC table genome browser was used to generate the TE.bed file with these options: clade: Vertebrate, group: Variation and Repeats, genome: Zebrafish, assembly: May 2017 GRCz11, track: RepeatMasker, table: rmsk.
 2. To extract DNA sequences from the reference genome based on the co-ordinates supplied in the bed file the following command was used: bedtools getfasta -s -name -fi Danio_rerio.GRCz11.dna.primary_assembly.fa -fo GRCz11.teseqs.use.fasta -bed GRCz11.teannotation.bed.
 3. To mask the sequences in the reference genome the following script was used: bedtools maskfasta -fi Danio_rerio.GRCz11.dna.primary_assembly.fa -fo GRCz11.masked.fasta -bed GRCz11.teannotation.bed.
 4. To create the TE-merged reference genome: cat GRCz11.masked.fasta GRCz11.teseqs.1.fasta > GRCz11.teseqs.fishpi.fasta (GRCz11.teseqs.use.fasta). 
