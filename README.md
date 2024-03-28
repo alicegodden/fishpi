@@ -41,7 +41,7 @@ Example output files are based on dre-piRNA-1 5'-TGGTTAGTACTTGGATGGGAGACCGCCTGGG
 # Install and use FishPi (Linux)
 
 ```
-$ git clone [https://github.com/alicegodden/fishpi/tree/fishpi/](https://github.com/alicegodden/fishpi/releases/tag/FishPi)
+$ git clone github.com/alicegodden/fishpi
 $ cd fishpi # navigate to FishPi directory
 $ python fishpi.py # opens the GUI to use FishPi
 
