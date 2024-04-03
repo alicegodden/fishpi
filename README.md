@@ -21,7 +21,7 @@ Python 3.11
 Python libraries: tkinter, matplotlib, Pillow (PIL)
 FishPi was designed to be executed from the Linux command line terminal on Mac. Windows and also Mac users may use Python tools such as PyCharm Community Edition here: https://www.jetbrains.com/pycharm/download/ 
 
-If you would like to use FishPi on a Zebrafish reference genome other than GRCz11, please prepare your "teseqs.fasta" file by following the same instructions written below, but by selecting appropriate organism on UCSC browser. Also check the piRNA:TE seed rules, as these can be customised to your model organism in the python script behind the FishPi GUI. 
+If you would like to use FishPi on a Zebrafish reference genome other than GRCz11, please prepare your "teseqs.fasta" file by following the same instructions written below, but by selecting appropriate organism on UCSC browser. Also check the piRNA:TE seed rules, as these can be customised to your model organism in the python script behind the FishPi GUI. If you are working with the Zebrafish reference GRCz11 please download the annotated GRCz11.teseqs.fasta file here: https://zenodo.org/records/10656843 .
 
 To prepare your GRCz11.teseqs.fasta file:
 1. To generate a fasta file of the TE sequences in Zebrafish reference genome GRCz11 first make a .bed file. The UCSC table genome browser was used to generate the TE.bed file with these options: clade: Vertebrate, group: Variation and Repeats, genome: Zebrafish, assembly: May 2017 GRCz11, track: RepeatMasker, table: rmsk.
