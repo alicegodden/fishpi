@@ -16,6 +16,10 @@ Export the list of complementary TE sequences to a CSV file.
 Export the bar chart as an image file.
 
 # Requirements and input file preparation:
+User may have piRNA sequences for their given species, if not we recommend the following databases:
+
+SmallRNAGroup's databse of species piRNAs and piRNA clusters: https://www.smallrnagroup.uni-mainz.de/piRNAclusterDB/ 
+piRBase http://bigdata.ibp.ac.cn/piRBase/ 
 
 Python 3.11
 Python libraries: tkinter, matplotlib, Pillow (PIL)
