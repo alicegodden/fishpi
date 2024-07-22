@@ -1,3 +1,6 @@
+# Title: FishPi
+# Authors: Alice M. Godden, Benjamin T. Rix & Simone Immler
+
 import tkinter as tk
 from tkinter import messagebox, simpledialog, filedialog
 from PIL import Image, ImageTk
@@ -6,6 +9,10 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.lines import Line2D
 from matplotlib.colors import to_hex
+
+
+# test piRNA sequence should give, sequence: TACACGAAGACTGTGGTGTGATTGGGCG
+# result: dna 1223, ltr 369, line 136, sine 42, rc 15, satellite 8 counts
 
 # Initialize global variables
 piRNA_substring = ""
