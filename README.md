@@ -20,6 +20,8 @@ User may have piRNA sequences for their given species, if not we recommend the f
 
 SmallRNAGroup's databse of species piRNAs and piRNA clusters: https://www.smallrnagroup.uni-mainz.de/piRNAclusterDB/ 
 
+See Drerio_piRNAs_test_sRNAlab.fasta as example for required fasta format input for Fishpi piRNA sequences.
+
 piRBase http://bigdata.ibp.ac.cn/piRBase/ 
 
 Python 3.11
