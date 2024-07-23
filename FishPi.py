@@ -67,7 +67,7 @@ def classify_te_type(TE_name):
     return None
 
 # Define a function to perform the analysis
-def analyze_sequence():
+def analyse_sequence():
     global complementary_TE_list, piRNA_substring, fig, popup_window, counted_te_names, fig_chrom
 
     # Clear the previous results and reset te_type_counts
@@ -312,18 +312,18 @@ def upload_pirna_file():
                     piRNA_sequence = ''.join(lines[1:])
                     uploaded_pirna_sequences.append(piRNA_sequence)
         messagebox.showinfo("File Uploaded",
-                            "piRNA file uploaded successfully. Click 'Analyze Uploaded piRNA' to proceed.")
+                            "piRNA file uploaded successfully. Click 'Analyse Uploaded piRNA' to proceed.")
 
-# Define a function to analyze the next piRNA sequence from the uploaded file
-def analyze_uploaded_pirna():
+# Define a function to analyse the next piRNA sequence from the uploaded file
+def analyse_uploaded_pirna():
     if uploaded_pirna_sequences:
-        analyze_sequence()
+        analyse_sequence()
     else:
-        messagebox.showwarning("No piRNA Sequences", "No piRNA sequences to analyze. Please upload a file first.")
+        messagebox.showwarning("No piRNA Sequences", "No piRNA sequences to analyse. Please upload a file first.")
 
 # Create the main application window FishPi
 app = tk.Tk()
-app.title("FishPi: piRNA:TE Complementarity Analyzer")
+app.title("FishPi: piRNA:TE Complementarity Analyser")
 app.geometry("600x600")
 
 load2 = Image.open("fishpi.png")
@@ -343,10 +343,10 @@ piRNA_entry = tk.Entry(app, bg="white", fg="navy", borderwidth="0")
 piRNA_entry.pack()
 piRNA_entry.place(x=200, y=60, width=200)
 
-analyze_button = tk.Button(app, text="Analyze piRNA sequence", command=analyze_sequence, bg="orange", fg="navy",
+analyse_button = tk.Button(app, text="Analyse piRNA sequence", command=analyse_sequence, bg="orange", fg="navy",
                            borderwidth="0")
-analyze_button.pack()
-analyze_button.place(x=200, y=90, width=200)
+analyse_button.pack()
+analyse_button.place(x=200, y=90, width=200)
 
 # Add an upload button for piRNA file
 upload_button = tk.Button(app, text="Upload piRNA fasta file", command=upload_pirna_file, bg="orange", fg="navy",
@@ -354,10 +354,10 @@ upload_button = tk.Button(app, text="Upload piRNA fasta file", command=upload_pi
 upload_button.pack()
 upload_button.place(x=200, y=140, width=200)
 
-# Add a button to analyze the uploaded piRNA file
-analyze_uploaded_button = tk.Button(app, text="Analyze Uploaded piRNAs", command=analyze_uploaded_pirna, bg="orange",
+# Add a button to analyse the uploaded piRNA file
+analyse_uploaded_button = tk.Button(app, text="Analyse Uploaded piRNAs", command=analyse_uploaded_pirna, bg="orange",
                                     fg="navy", borderwidth="0")
-analyze_uploaded_button.pack()
-analyze_uploaded_button.place(x=200, y=170, width=200)
+analyse_uploaded_button.pack()
+analyse_uploaded_button.place(x=200, y=170, width=200)
 
 app.mainloop()
