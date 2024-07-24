@@ -1,5 +1,5 @@
 # Title: FishPi
-# First Author : Dr. Alice M. Godden
+# Authors : Dr. Alice M. Godden & Dr. Benjamin T. Rix
 
 import tkinter as tk
 from tkinter import messagebox, simpledialog, filedialog
@@ -343,19 +343,19 @@ piRNA_entry = tk.Entry(app, bg="white", fg="navy", borderwidth="0")
 piRNA_entry.pack()
 piRNA_entry.place(x=200, y=60, width=200)
 
-analyse_button = tk.Button(app, text="Analyse piRNA sequence", command=analyse_sequence, bg="orange", fg="navy",
+analyse_button = tk.Button(app, text="Analyse piRNA sequence", command=analyse_sequence, bg="white", fg="navy",
                            borderwidth="0")
 analyse_button.pack()
 analyse_button.place(x=200, y=90, width=200)
 
 # Add an upload button for piRNA file
-upload_button = tk.Button(app, text="Upload piRNA fasta file", command=upload_pirna_file, bg="orange", fg="navy",
+upload_button = tk.Button(app, text="Upload piRNA fasta file", command=upload_pirna_file, bg="white", fg="navy",
                           borderwidth="0")
 upload_button.pack()
 upload_button.place(x=200, y=140, width=200)
 
 # Add a button to analyse the uploaded piRNA file
-analyse_uploaded_button = tk.Button(app, text="Analyse Uploaded piRNAs", command=analyse_uploaded_pirna, bg="orange",
+analyse_uploaded_button = tk.Button(app, text="Analyse Uploaded piRNAs", command=analyse_uploaded_pirna, bg="white",
                                     fg="navy", borderwidth="0")
 analyse_uploaded_button.pack()
 analyse_uploaded_button.place(x=200, y=170, width=200)
