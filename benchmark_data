@@ -1,0 +1,7 @@
+/usr/local/bin/python3.11 /Users/alicegodden/PycharmProjects/fishpi/benchmark.py 
+Opening FishPi GUI 48.81 MB of memory.
+Uploading entire D.rerio piRNA database to analyse took 1375.59 MB of memory.
+analyse_sequence took 866.03 MB of memory.
+Plotting TE locations in genome took 1913.31 MB of memory.
+Exporting the bar chart took 2345.94 MB of memory.
+Plotting TE locations in genome took 2328.7734375 MB memory.
