@@ -97,7 +97,9 @@ Satellite: 	BRSATI, MOSAT
 This project is distributed under the GNU General Public License (GPL), which ensures that it remains open source and freely accessible for use.
 
 # Citation:
-Publication of Fishpi to follow, please check back for full citation or contact authors, details below. In the meantime please reference this git repository.
+FishPi: a bioinformatic prediction tool to link piRNA and transposable elements in zebrafish
+Alice May Godden, Benjamin Rix, Simone Immler
+bioRxiv 2024.09.10.612046; doi: https://doi.org/10.1101/2024.09.10.612046
 
 # Author & Contact:
 Dr Alice M. Godden
