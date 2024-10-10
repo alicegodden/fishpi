@@ -35,9 +35,9 @@ If you would like to use FishPi on a Zebrafish reference genome other than GRCz1
 
 To prepare your GRCz11.teseqs.fasta file:
 1. To generate a fasta file of the TE sequences in Zebrafish reference genome GRCz11 first make a .bed file. The UCSC table genome browser was used to generate the TE.bed file with these options: clade: Vertebrate, group: Variation and Repeats, genome: Zebrafish, assembly: May 2017 GRCz11, track: RepeatMasker, table: rmsk.
-2. To extract DNA sequences from the reference genome based on the co-ordinates supplied in the bed file the following command was used: bedtools getfasta -s -name -fi Danio_rerio.GRCz11.dna.primary_assembly.fa -fo GRCz11.teseqs.use.fasta -bed GRCz11.teannotation.bed.
-3. To mask the sequences in the reference genome the following script was used: bedtools maskfasta -fi Danio_rerio.GRCz11.dna.primary_assembly.fa -fo GRCz11.masked.fasta -bed GRCz11.teannotation.bed.
-4. To create the TE-merged reference genome: cat GRCz11.masked.fasta GRCz11.teseqs.1.fasta > GRCz11.teseqs.fishpi.fasta (GRCz11.teseqs.use.fasta). 
+2. To extract DNA sequences from the reference genome based on the co-ordinates supplied in the bed file the following command was used:
+   bedtools getfasta -s -name -fi Danio_rerio.GRCz11.dna.primary_assembly.fa -fo GRCz11.teseqs.use.fasta -bed GRCz11.teannotation.bed
+
 
 
 Clone or download the FishPi repository to your local machine, download all files here: https://github.com/alicegodden/fishpi/releases/tag/FishPi  
@@ -53,7 +53,7 @@ Example output files are based on dre-piRNA-1 5'-TGGTTAGTACTTGGATGGGAGACCGCCTGGG
 ```
 $ git clone github.com/alicegodden/fishpi
 $ cd fishpi # navigate to FishPi directory
-$ python fishpi.py # opens the GUI to use FishPi
+$ python FishPi.py # opens the GUI to use FishPi
 
 
 ```
