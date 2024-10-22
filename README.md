@@ -28,10 +28,10 @@ See Drerio_piRNAs_test_sRNAlab.fasta as example for required fasta format input 
 piRBase http://bigdata.ibp.ac.cn/piRBase/ 
 
 Python 3.11
-Python libraries: tkinter, matplotlib, Pillow (PIL)
+See requirements.txt for list of requirements.
 FishPi was designed to be executed from the Linux command line terminal on Mac. Windows and also Mac users may use Python tools such as PyCharm Community Edition here: https://www.jetbrains.com/pycharm/download/ 
 
-If you would like to use FishPi on a Zebrafish reference genome other than GRCz11, please prepare your "teseqs.fasta" file by following the same instructions written below, but by selecting appropriate organism on UCSC browser. Also check the piRNA:TE seed rules, as these can be customised to your model organism in the python script behind the FishPi GUI. If you are working with the Zebrafish reference GRCz11 please download the annotated GRCz11.teseqs.fasta file here: https://zenodo.org/records/10656843 .
+If you would like to use FishPi on a reference genome other than Zebrafish (GRCz11), Medaka (oryLat2) or Tilapia (Onil_1.2), please prepare your "teseqs.fasta" file by following the same instructions written below, but by selecting appropriate organism on UCSC browser. Also check the piRNA:TE seed rules, as these can be customised to your model organism in the python script behind the FishPi GUI. If you are working with the Zebrafish reference GRCz11 please download the annotated GRCz11.teseqs.fasta file here: https://zenodo.org/records/10656843 .
 
 To prepare your GRCz11.teseqs.fasta file:
 1. To generate a fasta file of the TE sequences in Zebrafish reference genome GRCz11 first make a .bed file. The UCSC table genome browser was used to generate the TE.bed file with these options: clade: Vertebrate, group: Variation and Repeats, genome: Zebrafish, assembly: May 2017 GRCz11, track: RepeatMasker, table: rmsk.
@@ -40,11 +40,6 @@ To prepare your GRCz11.teseqs.fasta file:
 
 
 
-Clone or download the FishPi repository to your local machine, download all files here: https://github.com/alicegodden/fishpi/releases/tag/FishPi  
-You need to make sure you have the GRCz11.teseqs.fasta, fishpi.png and FishPi.py in the area you execute your script, or same directory as you are running your project if using PyCharm.
-Ensure you have Python v3.11 and the required libraries installed.
-Prepare the TE sequence file and place it in the same directory as FishPi (only relevant if you want to use TE's not in GRCz11 annotation).
-Fishpi.py could be run on the command line as described below on Linux, or with Pycharm.
 Example output files are based on dre-piRNA-1 5'-TGGTTAGTACTTGGATGGGAGACCGCCTGGG-3', taken from piRBase (http://bigdata.ibp.ac.cn/piRBase/browse.php). 
 
 
@@ -53,6 +48,14 @@ Example output files are based on dre-piRNA-1 5'-TGGTTAGTACTTGGATGGGAGACCGCCTGGG
 ```
 $ git clone github.com/alicegodden/fishpi
 $ cd fishpi # navigate to FishPi directory
+$ conda env create -f environment.yml # Create your conda environment
+$ conda activate fishpi_environment # activate your environment
+
+# Verify the Installation
+# After activating the environment, verify that everything is installed correctly:
+$ python --version
+$ conda list
+
 $ python FishPi.py # opens the GUI to use FishPi
 
 
