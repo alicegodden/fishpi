@@ -46,27 +46,27 @@ Example output files are based on dre-piRNA-1 5'-TGGTTAGTACTTGGATGGGAGACCGCCTGGG
 # Install and use FishPi (Linux)
 
 ```
-$ git clone https://github.com/alicegodden/fishpi
-$ cd fishpi # navigate to FishPi directory
-$ cd files # navigate to FishPi scripts and files
-$ conda env create -f environment.yml # Create your conda environment
-$ conda activate fishpi_environment # activate your environment
+git clone https://github.com/alicegodden/fishpi
+cd fishpi # navigate to FishPi directory
+cd files # navigate to FishPi scripts and files
+conda env create -f environment.yml # Create your conda environment
+conda activate fishpi_environment # activate your environment
 
 # Verify the Installation
 # After activating the environment, verify that everything is installed correctly:
-$ python --version
-$ conda list
+python --version
+conda list
 
 # To download the TE sequence fasta files, download all files
-$ wget https://zenodo.org/records/13911872/files/GRCz11_ensembl_teseqs.fishpi.fasta.gz # For Zebrafish
-$ wget https://zenodo.org/records/13911872/files/Onil_1.2_ensembl_teseqs.fishpi.fasta.gz # For Tilapia
-$ wget https://zenodo.org/records/13911872/files/oryLat2_ensembl_teseqs.fishpi.fasta.gz # For Medaka
+wget https://zenodo.org/records/13911872/files/GRCz11_ensembl_teseqs.fishpi.fasta.gz # For Zebrafish
+wget https://zenodo.org/records/13911872/files/Onil_1.2_ensembl_teseqs.fishpi.fasta.gz # For Tilapia
+wget https://zenodo.org/records/13911872/files/oryLat2_ensembl_teseqs.fishpi.fasta.gz # For Medaka
 
 # Then uncompress fasta files
-$ gunzip *.fasta.gz
+gunzip *.fasta.gz
 
 # You should now be ready to run FishPi
-$ python FishPi.py # opens the GUI to use FishPi
+python FishPi.py # opens the GUI to use FishPi
 
 
 ```
