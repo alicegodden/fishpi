@@ -15,11 +15,11 @@ jobs:
     steps:
     # Step 1: Check out the repository
     - name: Check out the repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4  # Updated to latest version
 
     # Step 2: Set up Python
     - name: Set up Python 3.11
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v4  # No need to change as v4 supports Node 20
       with:
         python-version: 3.11
 
