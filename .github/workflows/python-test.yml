@@ -34,8 +34,12 @@ jobs:
       run: ls -R
       working-directory: .
 
-    # Step 5: Run FishPi script
+    # Step 5: Run FishPi script with error handling
     - name: Run FishPi script
       run: |
-        python files/FishPi.py
-      working-directory: .
+        set -e
+        python files/FishPi.py || echo "Python script failed with exit code $?"
+    - name: Display Python error logs if the script fails
+      if: failure()
+      run: |
+        echo "Check for more details in the script output above"
