@@ -29,17 +29,25 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    # Step 4: List files to verify file locations (for debugging purposes)
+    # Step 4: Download TE sequence fasta files from Zenodo
+    - name: Download TE sequence fasta files
+      run: |
+        mkdir -p files
+        wget -P files https://zenodo.org/record/13911872/files/GRCz11_ensembl_teseqs.fishpi.fasta.gz
+        wget -P files https://zenodo.org/record/13911872/files/Onil_1.2_ensembl_teseqs.fishpi.fasta.gz
+        wget -P files https://zenodo.org/record/13911872/files/oryLat2_ensembl_teseqs.fishpi.fasta.gz
+
+        # Decompress the files after downloading
+        gunzip files/GRCz11_ensembl_teseqs.fishpi.fasta.gz
+        gunzip files/Onil_1.2_ensembl_teseqs.fishpi.fasta.gz
+        gunzip files/oryLat2_ensembl_teseqs.fishpi.fasta.gz
+
+    # Step 5: List directory contents to verify file locations (for debugging purposes)
     - name: List directory contents
       run: ls -R
       working-directory: .
 
-    # Step 5: Run FishPi script with error handling
+    # Step 6: Run the Python script
     - name: Run FishPi script
       run: |
-        set -e
-        python files/FishPi.py || echo "Python script failed with exit code $?"
-    - name: Display Python error logs if the script fails
-      if: failure()
-      run: |
-        echo "Check for more details in the script output above"
+        python files/FishPi.py
