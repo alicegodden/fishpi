@@ -75,7 +75,7 @@ Export Data: You can export the complementary TE sequences to a CSV file and sav
 
 
 *Figure 1- Graphic User interface for FishPi and results for dre-piRNA-53095*
-![image](https://github.com/user-attachments/assets/48d28d66-a8ae-4438-9f2c-5b078e636b4b)
+![FishPi_GUI](https://github.com/user-attachments/assets/a7e64def-29a4-4aae-b883-5335beca54b8)
 
 
 
@@ -96,6 +96,7 @@ RC:	Helitron
 
 Satellite: 	BRSATI, MOSAT
 
+This is based off Dfam and Repeatmasker classifications.
 
 # Licence:
 This project is distributed under the GNU General Public License (GPL), which ensures that it remains open source and freely accessible for use.
