@@ -74,11 +74,13 @@ Export Data: You can export the complementary TE sequences to a CSV file and sav
 
 
 
-*Figure 1- Graphic User interface for FishPi and results for dre-piRNA-53095*
+*Figure 1- Graphic User interface for FishPi and results for dre-piRNA 5'-TACACGAAGACTGTGGTGTGATTGGGCG-3'*
 ![FishPi_GUI](https://github.com/user-attachments/assets/a7e64def-29a4-4aae-b883-5335beca54b8)
 
 
-
+# Flow chart of FishPi functions
+![fishpi_flow_diagram](https://github.com/user-attachments/assets/d13b522a-8e11-411b-9e76-2b8fe350511f)
+*Figure 2- Flow chart covering key steps and processes by FishPi*
 
 # Output results
 Transposable element species are grouped by order in the bar chart displayed, as in Figure 1 above. 
