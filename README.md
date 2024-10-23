@@ -46,9 +46,12 @@ Example output files are based on dre-piRNA-1 5'-TGGTTAGTACTTGGATGGGAGACCGCCTGGG
 # Install and use FishPi (Linux)
 
 ```
+# First, clone the github repo for fishpi
 git clone https://github.com/alicegodden/fishpi
+
 cd fishpi # navigate to FishPi directory
 cd files # navigate to FishPi scripts and files
+
 conda env create -f environment.yml # Create your conda environment
 conda activate fishpi_environment # activate your environment
 
