@@ -57,6 +57,15 @@ $ conda activate fishpi_environment # activate your environment
 $ python --version
 $ conda list
 
+# To download the TE sequence fasta files, download all files
+$ wget https://zenodo.org/records/13911872/files/GRCz11_ensembl_teseqs.fishpi.fasta.gz # For Zebrafish
+$ wget https://zenodo.org/records/13911872/files/Onil_1.2_ensembl_teseqs.fishpi.fasta.gz # For Tilapia
+$ wget https://zenodo.org/records/13911872/files/oryLat2_ensembl_teseqs.fishpi.fasta.gz # For Medaka
+
+# Then uncompress fasta files
+$ gunzip *.fasta.gz
+
+# You should now be ready to run FishPi
 $ python FishPi.py # opens the GUI to use FishPi
 
 
