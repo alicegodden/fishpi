@@ -15,11 +15,11 @@ jobs:
     steps:
     # Step 1: Check out the repository
     - name: Check out the repository
-      uses: actions/checkout@v4  # Updated to latest version
+      uses: actions/checkout@v4
 
-    # Step 2: Set up Python
+    # Step 2: Set up Python 3.11
     - name: Set up Python 3.11
-      uses: actions/setup-python@v4  # No need to change as v4 supports Node 20
+      uses: actions/setup-python@v4
       with:
         python-version: 3.11
 
@@ -29,7 +29,13 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    # Step 4: Run your script (assuming your script filename is FishPi.py)
+    # Step 4: List files to verify file locations (for debugging purposes)
+    - name: List directory contents
+      run: ls -R
+      working-directory: .
+
+    # Step 5: Run FishPi script
     - name: Run FishPi script
       run: |
-        python .files/FishPi.py
+        python files/FishPi.py
+      working-directory: .
