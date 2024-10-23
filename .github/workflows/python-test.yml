@@ -32,4 +32,4 @@ jobs:
     # Step 4: Run your script (assuming your script filename is FishPi.py)
     - name: Run FishPi script
       run: |
-        python FishPi.py
+        python .files/FishPi.py
