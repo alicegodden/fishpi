@@ -1,4 +1,4 @@
-name: FishPi Python Test
+name: FishPi GUI Test
 
 on:
   push:
@@ -45,19 +45,20 @@ jobs:
     - name: Install Xvfb
       run: sudo apt-get install -y xvfb
 
-    # Step 6: Run Xvfb (virtual display) and execute the script
+    # Step 6: Start Xvfb (virtual display) and execute the script
     - name: Run FishPi script with virtual display
       run: |
         # Start virtual framebuffer
-        Xvfb :99 &
+        Xvfb :99 -ac -screen 0 1280x1024x16 &
+        
+        # Sleep for a moment to ensure Xvfb has enough time to initialize
+        sleep 5
 
-        # Set DISPLAY environment variable
+        # Export DISPLAY environment variable
         export DISPLAY=:99
 
-        # Run the Python script
+        # Run the Python script (this is the FishPi.py script that creates the GUI)
         python files/FishPi.py
-
-      # Allow the script to access environment variables
       env:
         DISPLAY: ":99"
 
