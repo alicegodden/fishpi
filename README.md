@@ -1,4 +1,4 @@
-![GitHub Logo](https://github.com/alicegodden/fishpi/blob/main/fishpi.png)
+![GitHub Logo](https://github.com/alicegodden/fishpi/blob/main/files/fishpi.png)
 # FishPi
 
 Created by Dr. Alice M. Godden & Dr. Benjamin Rix, 2024
