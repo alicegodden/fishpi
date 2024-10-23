@@ -72,7 +72,7 @@ $ python FishPi.py # opens the GUI to use FishPi
 ```
 # Using FishPi with PyCharm IDE
 
-Make sure you download all files here https://github.com/alicegodden/fishpi/tree/main/files into your working directory in Pycharm, plus make sure you have the relevant fasta files from Zenodo linked above. 
+Make sure you download all files here https://github.com/alicegodden/fishpi/tree/main/files into your working directory in Pycharm, also make sure you have downloaded all the TE sequence fasta files from Zenodo linked above. 
 
 
 # How to Use FishPi:
