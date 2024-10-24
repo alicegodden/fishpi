@@ -1,5 +1,6 @@
 ![GitHub Logo](https://github.com/alicegodden/fishpi/blob/main/files/fishpi.png)
 # FishPi
+![GitHub Actions Status](https://github.com/alicegodden/fishpi/actions/workflows/python-test.yml/badge.svg)
 
 Created by Dr. Alice M. Godden & Dr. Benjamin Rix, 2024
 
