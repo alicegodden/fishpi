@@ -25,11 +25,8 @@ Export Functionality:
 
 # Input file preparation
 Users may have piRNA sequences for their given species, if not we recommend the following databases:
-
 SmallRNAGroup's databse of species piRNAs and piRNA clusters is linked [here](https://www.smallrnagroup.uni-mainz.de/piRNAclusterDB/) 
-
 See Drerio_piRNAs_test_sRNAlab.fasta as example for required fasta format input for Fishpi piRNA sequences.
-
 piRBase can be accessed [here](http://bigdata.ibp.ac.cn/piRBase/) 
 
 If you would like to use FishPi on a reference genome other than Zebrafish (GRCz11), Medaka (oryLat2) or Tilapia (Onil_1.2), please prepare your "teseqs.fasta" file by following the same instructions written below, but by selecting appropriate organism on UCSC browser. Also check the piRNA:TE seed rules of your organism, as these can be customised pm the FishPi GUI. If you are working with the Zebrafish, Medaka or Tilapia please download all the annotated teseqs.fasta files [here](https://zenodo.org/record/13911872).
@@ -84,7 +81,7 @@ Download TE Sequence Files: Additionally, download the required TE sequence file
 
 Input piRNA Sequence:
 Launch the FishPi application, and enter your piRNA sequence in the provided text box. Click on the "Analyse piRNA sequence" button to start the analysis.
-(Tip: You can use your own sequences or obtain them from public repositories like piRbase.)
+(Tip: You can use your own sequences or obtain them from public repositories like piRbase.) If you are analysing a file of piRNA sequences, leave the piRNA sequence box blank.
 
 View Analysis Results:
 Once the analysis is complete, FishPi will display the results in a new popup window. You will see a bar chart representing complementary TE counts by type, as well as a chromosomal location plot for complementary TEs.
