@@ -4,23 +4,26 @@
 
 Created by Dr. Alice M. Godden & Dr. Benjamin Rix, 2024
 
-# Description:
-FishPi is a Python-based piRNA sequence analysis tool designed to identify complementary transposable element (TE) sequences in a given piRNA sequence or fasta file of piRNAs. This project combines the power of various Python libraries, including tkinter for the graphic user interface, matplotlib for data visualization, and PIL (Pillow) for image rendering. All results and plots can be exported for downstream analyses and publication in hi-resolution.
+# FishPi: A Powerful Tool for piRNA Analysis
+FishPi is a cutting-edge, Python-powered solution for piRNA sequence analysis, designed to swiftly identify complementary transposable element (TE) sequences from individual piRNA sequences or entire fasta files. Featuring an intuitive graphical user interface built with tkinter, vivid data visualizations through matplotlib, and high-quality image rendering with Pillow, FishPi makes complex genomic analysis accessible and visually compelling. Export your results and high-resolution plots effortlessly, making FishPi ideal for downstream analysis and publication-ready outputs.
 
 # Performance Benchmark and System Requirements
 FishPi was benchmarked using GitHub Actions for continuous integration, ensuring reliable performance across different environments. The entire database of piRNA sequences from piRNADB (5000+ piRNA sequences) was tested, requiring less than 3 GB of memory and taking 1-2 minutes to generate plots and outputs on a standard machine. FishPi was developed using Python v3.11. For full requirements, see requirements.txt.
 
 # Features:
 
-Analyze piRNA sequences for complementary TE matches.
-Can customize piRNA seed region length and add mismatches to this seed region. Also can search for reverse complement of seed region.
-Classify TE types based on keywords.
-Generate a bar chart showing complementary TE counts by type.
-Export the list of complementary TE sequences to a CSV file.
-Export the bar chart as an image file.
+- Comprehensive piRNA Analysis: Analyze piRNA sequences to identify complementary transposable element (TE) matches from TE reference sequences.
+- Customizable Seed Region Parameters: Define the length of the piRNA seed region, introduce mismatches for increased flexibility, and optionally search for reverse complement matches.
+TE Classification:
+- Automatically classify TE types based on comprehensive keyword matching to assign each TE to categories like DNA, LTR, LINE, SINE, RC, and Satellite.
+Data Visualization:
+- Generate bar charts to visualize complementary TE counts by type, providing immediate insights into sequence relationships.
+Export Functionality:
+- Export the list of complementary TE sequences, complete with details, to a CSV file for further analysis.
+- Export generated bar charts as high-resolution image files for reports, presentations, and publication purposes.
 
 # Input file preparation:
-User may have piRNA sequences for their given species, if not we recommend the following databases:
+Users may have piRNA sequences for their given species, if not we recommend the following databases:
 
 SmallRNAGroup's databse of species piRNAs and piRNA clusters is linked [here](https://www.smallrnagroup.uni-mainz.de/piRNAclusterDB/) 
 
@@ -70,19 +73,27 @@ python FishPi.py # opens the GUI to use FishPi
 
 ```
 # Using FishPi with PyCharm IDE
+To get started with FishPi in PyCharm:
 
-Make sure you download all files [here](https://github.com/alicegodden/fishpi/tree/main/files) into your working directory in Pycharm. 
-To download the required TE sequence files, click [here](https://zenodo.org/record/13911872).
+Download Project Files: Make sure you download all necessary files from  [here](https://github.com/alicegodden/fishpi/tree/main/files). Place these files into your working directory within PyCharm, ensuring that they are accessible to your Python scripts.
 
+Download TE Sequence Files: Additionally, download the required TE sequence files from Zenodo  [here](https://zenodo.org/record/13911872). Extract these files to uncompress them, and place them in the same working directory for seamless integration with FishPi. 
 
 # How to Use FishPi:
 
-Input piRNA Sequence: Launch the FishPi application. Enter your piRNA sequence in the provided text field and click the "Analyse piRNA sequence" button.
-piRNA sequences can be obtained from your own analyses or from a repository like piRbase described above.
+Input piRNA Sequence:
+Launch the FishPi application, and enter your piRNA sequence in the provided text box. Click on the "Analyse piRNA sequence" button to start the analysis.
+(Tip: You can use your own sequences or obtain them from public repositories like piRbase.)
 
-View Analysis Results: FishPi will analyze the piRNA sequence and display the results in a popup window. The results include a bar chart showing complementary TE counts by type and chromosomal location of complementary TEs. 
+View Analysis Results:
+Once the analysis is complete, FishPi will display the results in a new popup window. You will see a bar chart representing complementary TE counts by type, as well as a chromosomal location plot for complementary TEs.
 
-Export Data: You can export the complementary TE sequences to a CSV file and save the bar chart as an image file using the export buttons provided in the popup window, (Figure 1).
+Export Data:
+Export options are provided directly in the popup window for easy sharing or further analysis. 
+You can save:
+The list of complementary TE sequences as a CSV file.
+The generated plots as an image file (high resolution, suitable for publications).
+(Figure 1 shows an example of the results display and export options. Figure 2 presents a flow chart summarizing the key steps and processes undertaken by FishPi.)
 
 
 *Figure 1- Graphic User interface for FishPi and results for dre-piRNA 5'-TACACGAAGACTGTGGTGTGATTGGGCG-3'*
@@ -90,46 +101,41 @@ Export Data: You can export the complementary TE sequences to a CSV file and sav
 
 
 # Flow chart of FishPi functions
+Below is a flow chart illustrating the key steps and processes involved in the FishPi workflow. This flow chart provides an overview of the sequence analysis, transposable element (TE) matching, and the export functionalities available in FishPi.
+
 ![fishpi_flow_diagram](https://github.com/user-attachments/assets/c998d404-6c3f-4ca2-a335-fa11581721df)
 *Figure 2- Flow chart covering key steps and processes by FishPi*
 
 # Output results
-Transposable element species are grouped by order in the bar chart displayed, as in Figure 1 above. 
-The transposable elements covered are grouped as follows:
+The transposable element (TE) species are grouped by order in the bar chart displayed, as shown in Figure 1 above. The TEs analyzed by FishPi are categorized based on RepeatMasker classifications, grouped as follows:
 
-DNA:	hAT, Tc1, Tc-Mar, Harbinger, Enspm, Kolobok, Merlin, Crypton, PiggyBac, Dada, Zatar, Ginger, TDR, Polinton, Maverick, Acrobat, Looper, TZF, Angel, Mariner
-
-LTR:	Gypsy, DIRS, Ngaro, ERV, Pao, Copia, BEL, HERV, Bhikari
-
-LINE:	L1, L2, L1-Tx1, Rex-Babar, RTE, Penelope, Keno, Rex
-
-SINE:	Alu, tRNA-V-RTE
-
-RC:	Helitron
-
-Satellite: 	BRSATI, MOSAT
-
-This is based off Repeatmasker classifications.
+DNA Transposons: hAT, Tc1, Tc-Mar, Harbinger, Enspm, Kolobok, Merlin, Crypton, PiggyBac, Dada, Zatar, Ginger, TDR, Polinton, Maverick, Acrobat, Looper, TZF, Angel, Mariner
+LTR Retrotransposons: Gypsy, DIRS, Ngaro, ERV, Pao, Copia, BEL, HERV, Bhikari
+LINEs (Long Interspersed Nuclear Elements): L1, L2, L1-Tx1, Rex-Babar, RTE, Penelope, Keno, Rex
+SINEs (Short Interspersed Nuclear Elements): Alu, tRNA-V-RTE
+Rolling Circle (RC) Transposons: Helitron
+Satellite Repeats: BRSATI, MOSAT
+These groupings help to identify and quantify complementary TEs in the analyzed piRNA sequence, providing a comprehensive overview of TE relationships.
 
 # Licence
 This project is distributed under the GNU General Public License (GPL), which ensures that it remains open source and freely accessible for use.
 
 # Citation
-FishPi: a bioinformatic prediction tool to link piRNA and transposable elements in zebrafish
+If you use FishPi in your research, please cite:
+
+FishPi: A Bioinformatic Prediction Tool to Link piRNA and Transposable Elements in Zebrafish
 Alice May Godden, Benjamin Rix, Simone Immler
-bioRxiv 2024.09.10.612046; doi: https://doi.org/10.1101/2024.09.10.612046
+bioRxiv 2024.09.10.612046; DOI: https://doi.org/10.1101/2024.09.10.612046
+
 
 # Author & Contact
-Dr Alice M. Godden
-
-Dr. Benjamin Rix 
-
+Dr. Alice M. Godden
+Dr. Benjamin Rix
 Prof. Simone Immler
-
 University of East Anglia, School of Biological Sciences, Norwich, United Kingdom, NR4 7TJ
 
-Contact:
+For inquiries or to report issues, feel free to reach out:
 
 Email: alice.godden@uea.ac.uk
-Feel free to report issues or suggest improvements. FishPi is designed to make piRNA sequence analysis accessible and informative for researchers and bioinformaticians.
+We encourage feedback, suggestions for improvements, and collaboration to help make FishPi a more effective tool for piRNA sequence analysis and bioinformatics research.
 
