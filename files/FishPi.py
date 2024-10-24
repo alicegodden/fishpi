@@ -603,7 +603,7 @@ img_label2.place(x=175, y=475)
 
 app.configure(bg="orange")
 
-piRNA_label = tk.Label(app, text="Enter piRNA Sequence (leave blank if uploading file):",
+piRNA_label = tk.Label(app, text="Enter piRNA Sequence:",
                        bg="orange", fg="navy", font="bold")
 piRNA_label.pack()
 piRNA_label.place(x=200, y=30)
