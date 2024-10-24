@@ -7,18 +7,19 @@ Created by Dr. Alice M. Godden & Dr. Benjamin Rix, 2024
 FishPi is a Python-based piRNA sequence analysis tool designed to identify complementary transposable element (TE) sequences in a given piRNA sequence or fasta file of piRNAs. This project combines the power of various Python libraries, including tkinter for the graphic user interface, matplotlib for data visualization, and PIL (Pillow) for image rendering. All results and plots can be exported for downstream analyses and publication in hi-resolution.
 
 # Memory and system requirements
-FishPi was benchmarked with the entire database of piRNA sequences from piRNADB (5000+ piRNA sequences), this required < 3 GB to run, taking 1-2 minutes to generate plots and outputs for export on a standard machine. FishPi was developed on Python v 3.11.
+FishPi was benchmarked with the entire database of piRNA sequences from piRNADB (5000+ piRNA sequences), this required < 3 GB to run, taking 1-2 minutes to generate plots and outputs for export on a standard machine. FishPi was developed on Python v 3.11. For full requirements see requirements.txt. 
 
 
 # Features:
 
 Analyze piRNA sequences for complementary TE matches.
+Can customize piRNA seed region length and add mismatches to this seed region. Also can search for reverse complement of seed region.
 Classify TE types based on keywords.
 Generate a bar chart showing complementary TE counts by type.
 Export the list of complementary TE sequences to a CSV file.
 Export the bar chart as an image file.
 
-# Requirements and input file preparation:
+# Input file preparation:
 User may have piRNA sequences for their given species, if not we recommend the following databases:
 
 SmallRNAGroup's databse of species piRNAs and piRNA clusters: https://www.smallrnagroup.uni-mainz.de/piRNAclusterDB/ 
@@ -27,17 +28,12 @@ See Drerio_piRNAs_test_sRNAlab.fasta as example for required fasta format input 
 
 piRBase http://bigdata.ibp.ac.cn/piRBase/ 
 
-Python 3.11
-See requirements.txt for list of requirements.
-FishPi was designed to be executed from the Linux command line terminal on Mac. Windows and also Mac users may use Python tools such as PyCharm Community Edition here: https://www.jetbrains.com/pycharm/download/ 
+If you would like to use FishPi on a reference genome other than Zebrafish (GRCz11), Medaka (oryLat2) or Tilapia (Onil_1.2), please prepare your "teseqs.fasta" file by following the same instructions written below, but by selecting appropriate organism on UCSC browser. Also check the piRNA:TE seed rules of your organism, as these can be customised pm the FishPi GUI. If you are working with the Zebrafish, Medaka or Tilapia please download all the annotated teseqs.fasta files here: [https://zenodo.org/records/10656843](https://zenodo.org/records/13911872) .
 
-If you would like to use FishPi on a reference genome other than Zebrafish (GRCz11), Medaka (oryLat2) or Tilapia (Onil_1.2), please prepare your "teseqs.fasta" file by following the same instructions written below, but by selecting appropriate organism on UCSC browser. Also check the piRNA:TE seed rules, as these can be customised to your model organism in the python script behind the FishPi GUI. If you are working with the Zebrafish, Medaka or Tilapia please download all the annotated teseqs.fasta files here: [https://zenodo.org/records/10656843](https://zenodo.org/records/13911872) .
-
-To prepare your GRCz11.teseqs.fasta file:
-1. To generate a fasta file of the TE sequences in Zebrafish reference genome GRCz11 first make a .bed file. The UCSC table genome browser was used to generate the TE.bed file with these options: clade: Vertebrate, group: Variation and Repeats, genome: Zebrafish, assembly: May 2017 GRCz11, track: RepeatMasker, table: rmsk.
+To prepare your teseqs.fasta file:
+1. To generate a fasta file of the TE sequences for your reference genome, first make a .bed file. The UCSC table genome browser was used to generate the TE.bed file with these options: clade: Vertebrate, group: Variation and Repeats, genome: Zebrafish, assembly: May 2017 GRCz11, track: RepeatMasker, table: rmsk.
 2. To extract DNA sequences from the reference genome based on the co-ordinates supplied in the bed file the following command was used:
    bedtools getfasta -s -name -fi Danio_rerio.GRCz11.dna.primary_assembly.fa -fo GRCz11.teseqs.use.fasta -bed GRCz11.teannotation.bed
-
 
 
 Example output files are based on dre-piRNA-1 5'-TGGTTAGTACTTGGATGGGAGACCGCCTGGG-3', taken from piRBase (http://bigdata.ibp.ac.cn/piRBase/browse.php). 
@@ -75,7 +71,7 @@ python FishPi.py # opens the GUI to use FishPi
 ```
 # Using FishPi with PyCharm IDE
 
-Make sure you download all files here https://github.com/alicegodden/fishpi/tree/main/files into your working directory in Pycharm, also make sure you have downloaded all the TE sequence fasta files from Zenodo linked above. 
+Make sure you download all files here https://github.com/alicegodden/fishpi/tree/main/files into your working directory in Pycharm, also make sure you have downloaded all the TE sequence fasta files from Zenodo here: https://zenodo.org/records/13911872. 
 
 
 # How to Use FishPi:
@@ -86,7 +82,6 @@ piRNA sequences can be obtained from your own analyses or from a repository like
 View Analysis Results: FishPi will analyze the piRNA sequence and display the results in a popup window. The results include a bar chart showing complementary TE counts by type and chromosomal location of complementary TEs. 
 
 Export Data: You can export the complementary TE sequences to a CSV file and save the bar chart as an image file using the export buttons provided in the popup window, (Figure 1).
-
 
 
 *Figure 1- Graphic User interface for FishPi and results for dre-piRNA 5'-TACACGAAGACTGTGGTGTGATTGGGCG-3'*
