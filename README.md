@@ -109,7 +109,7 @@ RC:	Helitron
 
 Satellite: 	BRSATI, MOSAT
 
-This is based off Dfam and Repeatmasker classifications.
+This is based off Repeatmasker classifications.
 
 # Licence:
 This project is distributed under the GNU General Public License (GPL), which ensures that it remains open source and freely accessible for use.
