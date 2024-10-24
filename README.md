@@ -23,13 +23,13 @@ Export the bar chart as an image file.
 # Input file preparation:
 User may have piRNA sequences for their given species, if not we recommend the following databases:
 
-SmallRNAGroup's databse of species piRNAs and piRNA clusters: https://www.smallrnagroup.uni-mainz.de/piRNAclusterDB/ 
+SmallRNAGroup's databse of species piRNAs and piRNA clusters is linked [here](https://www.smallrnagroup.uni-mainz.de/piRNAclusterDB/) 
 
 See Drerio_piRNAs_test_sRNAlab.fasta as example for required fasta format input for Fishpi piRNA sequences.
 
-piRBase http://bigdata.ibp.ac.cn/piRBase/ 
+piRBase can be accessed [here](http://bigdata.ibp.ac.cn/piRBase/) 
 
-If you would like to use FishPi on a reference genome other than Zebrafish (GRCz11), Medaka (oryLat2) or Tilapia (Onil_1.2), please prepare your "teseqs.fasta" file by following the same instructions written below, but by selecting appropriate organism on UCSC browser. Also check the piRNA:TE seed rules of your organism, as these can be customised pm the FishPi GUI. If you are working with the Zebrafish, Medaka or Tilapia please download all the annotated teseqs.fasta files here: [https://zenodo.org/records/10656843](https://zenodo.org/records/13911872) .
+If you would like to use FishPi on a reference genome other than Zebrafish (GRCz11), Medaka (oryLat2) or Tilapia (Onil_1.2), please prepare your "teseqs.fasta" file by following the same instructions written below, but by selecting appropriate organism on UCSC browser. Also check the piRNA:TE seed rules of your organism, as these can be customised pm the FishPi GUI. If you are working with the Zebrafish, Medaka or Tilapia please download all the annotated teseqs.fasta files [here](https://zenodo.org/record/13911872).
 
 To prepare your teseqs.fasta file:
 1. To generate a fasta file of the TE sequences for your reference genome, first make a .bed file. The UCSC table genome browser was used to generate the TE.bed file with these options: clade: Vertebrate, group: Variation and Repeats, genome: Zebrafish, assembly: May 2017 GRCz11, track: RepeatMasker, table: rmsk.
@@ -72,7 +72,8 @@ python FishPi.py # opens the GUI to use FishPi
 ```
 # Using FishPi with PyCharm IDE
 
-Make sure you download all files here https://github.com/alicegodden/fishpi/tree/main/files into your working directory in Pycharm, also make sure you have downloaded all the TE sequence fasta files from Zenodo here: https://zenodo.org/records/13911872. 
+Make sure you download all files [here](https://github.com/alicegodden/fishpi/tree/main/files) into your working directory in Pycharm. 
+To download the required TE sequence files, click [here](https://zenodo.org/record/13911872).
 
 
 # How to Use FishPi:
@@ -111,15 +112,15 @@ Satellite: 	BRSATI, MOSAT
 
 This is based off Repeatmasker classifications.
 
-# Licence:
+# Licence
 This project is distributed under the GNU General Public License (GPL), which ensures that it remains open source and freely accessible for use.
 
-# Citation:
+# Citation
 FishPi: a bioinformatic prediction tool to link piRNA and transposable elements in zebrafish
 Alice May Godden, Benjamin Rix, Simone Immler
 bioRxiv 2024.09.10.612046; doi: https://doi.org/10.1101/2024.09.10.612046
 
-# Author & Contact:
+# Author & Contact
 Dr Alice M. Godden
 
 Dr. Benjamin Rix 
@@ -133,5 +134,3 @@ Contact:
 Email: alice.godden@uea.ac.uk
 Feel free to report issues or suggest improvements. FishPi is designed to make piRNA sequence analysis accessible and informative for researchers and bioinformaticians.
 
-Note:
-The "fishpi.png" image file is used for the graphical interface, if you are running FishPi in Pycharm you will need this image in order for the software to run.
