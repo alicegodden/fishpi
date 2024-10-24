@@ -52,7 +52,7 @@ jobs:
         Xvfb :99 -ac -screen 0 1280x1024x16 &
         
         # Sleep for a moment to ensure Xvfb has enough time to initialize
-        sleep 5
+        sleep 8
 
         # Export DISPLAY environment variable
         export DISPLAY=:99
