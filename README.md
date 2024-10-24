@@ -15,7 +15,7 @@ Comprehensive piRNA Analysis:
 - Analyze piRNA sequences to identify complementary transposable element (TE) matches from TE reference sequences.
 - Customizable Seed Region Parameters: 
 - Define the length of the piRNA seed region, introduce mismatches for increased flexibility, and optionally search for reverse complement matches. For teleost species we recommend the default of 1-10 complementary base pairs, which ensure complementarity between the first 10 nucleotides of the TE.
-- Use is able to add custom species via addition of custom teseqs.fasta and custom chrom_end.txt file. 
+- User is able to add custom species via addition of custom teseqs.fasta and custom chrom_end.txt file to run on any species they like.
 TE Classification:
 - Automatically classify TE types based on comprehensive keyword matching to assign each TE to categories like DNA, LTR, LINE, SINE, RC, and Satellite.
 Data Visualization:
