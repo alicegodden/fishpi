@@ -79,7 +79,7 @@ Download Project Files: Make sure you download all necessary files from  [here](
 
 Download TE Sequence Files: Additionally, download the required TE sequence files from Zenodo  [here](https://zenodo.org/record/13911872). Extract these files to uncompress them, and place them in the same working directory for seamless integration with FishPi. 
 
-# How to Use FishPi:
+# How to Use FishPi
 
 Input piRNA Sequence:
 Launch the FishPi application, and enter your piRNA sequence in the provided text box. Click on the "Analyse piRNA sequence" button to start the analysis.
