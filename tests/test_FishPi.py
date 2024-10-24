@@ -34,11 +34,10 @@ try:
 except ImportError:
     import tkinter as tk  # Python 3
 
-    # same as 2> /dev/null in the shell
+    # Redirect stderr to avoid compatibility warnings
     f = open("/dev/null", "w")
     os.dup2(f.fileno(), 2)
-    f.close()  # to avoid error message about mac compatibility
-    # Secure coding is not enabled for restorable state!
+    f.close()
 
 # Create a dictionary to count TE types
 te_type_counts: Dict[str, int] = {
@@ -65,6 +64,10 @@ species_files: Dict[str, Dict[str, str]] = {
         "te_fasta": "oryLat2_ensembl_teseqs.fishpi.fasta",
         "chrom_end": "medaka_chrom_end.txt",
     },
+    "custom": {
+        "te_fasta": "",
+        "chrom_end": "",
+    }
 }
 
 
@@ -89,6 +92,20 @@ def classify_te_type(te_name: str) -> str:
         if any(keyword.lower() in te_name_lower for keyword in keyword_list):
             return te_type
     return "UNKNOWN"
+
+
+# Function to select custom files for the "Custom" species
+def select_custom_files():
+    custom_te_file = filedialog.askopenfilename(title="Select Custom Species TE FASTA File",
+                                                filetypes=[("FASTA Files", "*.fasta *.fa"), ("All Files", "*.*")])
+    custom_chrom_end_file = filedialog.askopenfilename(title="Select Custom Species Chromosome Length File",
+                                                       filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")])
+    if custom_te_file and custom_chrom_end_file:
+        species_files["custom"]["te_fasta"] = custom_te_file
+        species_files["custom"]["chrom_end"] = custom_chrom_end_file
+        messagebox.showinfo("Files Selected", "Custom TE and Chromosome files selected successfully.")
+    else:
+        messagebox.showerror("Selection Error", "Both TE and Chromosome files need to be selected.")
 
 
 # Define a function to introduce mismatches in the seed sequence
@@ -150,8 +167,7 @@ def analyse_sequence() -> None:
         piRNA_substring = piRNA_sequence[start:end]
 
     except ValueError:
-        messagebox.showerror("Invalid", "Please enter"
-                                        " a valid range like '1-10'.")
+        messagebox.showerror("Invalid", "Please enter a valid range like '1-10'.")
         return
 
     # Get the number of mismatches from user input
@@ -391,7 +407,6 @@ def create_results() -> None:
 
     plot_te_chromosomal_locations()
 
-
 # Define a function to plot TE chromosomal locations with PuOr colormap
 def plot_te_chromosomal_locations() -> None:
     global fig_chrom
@@ -593,61 +608,43 @@ def analyse_uploaded_pirna() -> None:
 app = tk.Tk()
 app.title("FishPi: piRNA:TE Complementarity Analyser")
 app.geometry("600x700")
+app.configure(bg="orange")
 
-load2 = Image.open("fishpi.png")
-load2 = load2.resize((250, 250))
+load2 = Image.open("fishpi.png").resize((275, 275))
 render2 = ImageTk.PhotoImage(load2)
 img_label2 = tk.Label(image=render2, bg="orange")
 img_label2.image = render2
-img_label2.place(x=175, y=475)
+img_label2.place(x=175, y=440)
 
-app.configure(bg="orange")
-
-piRNA_label = tk.Label(app, text="Enter piRNA Sequence:",
-                       bg="orange", fg="navy", font="bold")
+piRNA_label = tk.Label(app, text="Enter piRNA Sequence:", bg="orange", fg="navy", font="bold")
 piRNA_label.pack()
-piRNA_label.place(x=200, y=30)
-
+piRNA_label.place(x=150, y=30)
 piRNA_entry = tk.Entry(app, bg="white", fg="navy", borderwidth="0")
 piRNA_entry.pack()
 piRNA_entry.place(x=200, y=60, width=200)
 
-# Add text box for range input
-range_label = tk.Label(app, text="Enter Base Range (e.g., 1-10):",
-                       bg="orange", fg="navy", font="bold")
+range_label = tk.Label(app, text="Enter Base Range (e.g., 2-8):", bg="orange", fg="navy", font="bold")
 range_label.pack()
 range_label.place(x=150, y=100)
-
 search_range_entry = tk.Entry(app, bg="white", fg="navy", borderwidth="0")
 search_range_entry.pack()
 search_range_entry.place(x=200, y=130, width=100)
 
-# Add checkbox for reverse complement search
 search_reverse_complement = tk.BooleanVar()
-reverse_complement_check = tk.Checkbutton(app,
-                                          text="Also Search for Reverse "
-                                          "Complement of Seed",
-                                          variable=search_reverse_complement,
-                                          bg="orange", fg="navy", font="bold")
+reverse_complement_check = tk.Checkbutton(app, text="Also Search for Reverse Complement of Seed",
+                                          variable=search_reverse_complement, bg="orange", fg="navy", font="bold")
 reverse_complement_check.pack()
 reverse_complement_check.place(x=150, y=160)
 
-# Add input box for mismatches
-mismatch_label = tk.Label(app,
-                          text="Enter Number of Mismatches to seed "
-                          "(Default is 0):", bg="orange", fg="navy",
-                          font="bold")
+mismatch_label = tk.Label(app, text="Enter Number of Mismatches to seed (Default is 0):", bg="orange", fg="navy", font="bold")
 mismatch_label.pack()
 mismatch_label.place(x=150, y=200)
-
 mismatch_entry = tk.Entry(app, bg="white", fg="navy", borderwidth="0")
 mismatch_entry.pack()
 mismatch_entry.place(x=200, y=230, width=100)
 
-# Add radio buttons for species selection
 species_var = tk.StringVar(value="zebrafish")
-species_label = tk.Label(app, text="Select Species:",
-                         bg="orange", fg="navy", font="bold")
+species_label = tk.Label(app, text="Select Species:", bg="orange", fg="navy", font="bold")
 species_label.pack()
 species_label.place(x=150, y=270)
 
@@ -656,31 +653,25 @@ species_frame.pack()
 species_frame.place(x=150, y=300)
 
 for species in species_files.keys():
-    rb = tk.Radiobutton(species_frame, text=species.capitalize(),
-                        variable=species_var, value=species,
+    rb = tk.Radiobutton(species_frame, text=species.capitalize(), variable=species_var, value=species,
                         bg="orange", fg="navy", font="bold")
     rb.pack(anchor="w")
 
-analyse_button = tk.Button(app, text="Analyse piRNA sequence",
-                           command=analyse_sequence,
-                           bg="white", fg="navy", borderwidth="0")
+select_custom_files_button = tk.Button(app, text="Select Custom Species Files", command=select_custom_files, bg="white", fg="navy", borderwidth="0")
+select_custom_files_button.pack()
+select_custom_files_button.place(x=300, y=300, width=200)
+
+analyse_button = tk.Button(app, text="Analyse piRNA sequence", command=analyse_sequence, bg="white", fg="navy", borderwidth="0")
 analyse_button.pack()
-analyse_button.place(x=200, y=380, width=200)
+analyse_button.place(x=300, y=330, width=200)
 
-# Add an upload button for piRNA file
-upload_button = tk.Button(app, text="Upload piRNA fasta file",
-                          command=upload_pirna_file, bg="white",
-                          fg="navy", borderwidth="0")
+upload_button = tk.Button(app, text="Upload piRNA fasta file", command=upload_pirna_file, bg="white", fg="navy", borderwidth="0")
 upload_button.pack()
-upload_button.place(x=200, y=410, width=200)
+upload_button.place(x=300, y=360, width=200)
 
-# Add a button to analyse the uploaded piRNA file
-analyse_uploaded_button = tk.Button(app,
-                                    text="Analyse Uploaded piRNAs",
-                                    command=analyse_uploaded_pirna,
-                                    bg="white", fg="navy", borderwidth="0")
+analyse_uploaded_button = tk.Button(app, text="Analyse Uploaded piRNAs", command=analyse_uploaded_pirna, bg="white", fg="navy", borderwidth="0")
 analyse_uploaded_button.pack()
-analyse_uploaded_button.place(x=200, y=440, width=200)
+analyse_uploaded_button.place(x=300, y=390, width=200)
 
 app.mainloop()
 
