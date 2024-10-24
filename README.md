@@ -10,8 +10,7 @@ FishPi is a cutting-edge, Python-powered solution for piRNA sequence analysis, d
 # Performance Benchmark and System Requirements
 FishPi was benchmarked using GitHub Actions for continuous integration, ensuring reliable performance across different environments. The entire database of piRNA sequences from piRNADB (5000+ piRNA sequences) was tested, requiring less than 3 GB of memory and taking 1-2 minutes to generate plots and outputs on a standard machine. FishPi was developed using Python v3.11. For full requirements, see requirements.txt.
 
-# Features:
-
+# Features
 - Comprehensive piRNA Analysis: Analyze piRNA sequences to identify complementary transposable element (TE) matches from TE reference sequences.
 - Customizable Seed Region Parameters: Define the length of the piRNA seed region, introduce mismatches for increased flexibility, and optionally search for reverse complement matches.
 TE Classification:
@@ -22,7 +21,7 @@ Export Functionality:
 - Export the list of complementary TE sequences, complete with details, to a CSV file for further analysis.
 - Export generated bar charts as high-resolution image files for reports, presentations, and publication purposes.
 
-# Input file preparation:
+# Input file preparation
 Users may have piRNA sequences for their given species, if not we recommend the following databases:
 
 SmallRNAGroup's databse of species piRNAs and piRNA clusters is linked [here](https://www.smallrnagroup.uni-mainz.de/piRNAclusterDB/) 
