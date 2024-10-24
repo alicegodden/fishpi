@@ -91,7 +91,7 @@ Export Data: You can export the complementary TE sequences to a CSV file and sav
 
 
 # Flow chart of FishPi functions
-![fishpi_flow_diagram](https://github.com/user-attachments/assets/d13b522a-8e11-411b-9e76-2b8fe350511f)
+![fishpi_flow_diagram](https://github.com/user-attachments/assets/c998d404-6c3f-4ca2-a335-fa11581721df)
 *Figure 2- Flow chart covering key steps and processes by FishPi*
 
 # Output results
