@@ -79,7 +79,7 @@ To download the required TE sequence files, click [here](https://zenodo.org/reco
 # How to Use FishPi:
 
 Input piRNA Sequence: Launch the FishPi application. Enter your piRNA sequence in the provided text field and click the "Analyse piRNA sequence" button.
-piRNA sequences can be obtained from your own analyses or from a repository like piRbase: http://bigdata.ibp.ac.cn/piRBase/ 
+piRNA sequences can be obtained from your own analyses or from a repository like piRbase described above.
 
 View Analysis Results: FishPi will analyze the piRNA sequence and display the results in a popup window. The results include a bar chart showing complementary TE counts by type and chromosomal location of complementary TEs. 
 
