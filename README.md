@@ -12,9 +12,10 @@ FishPi was benchmarked using GitHub Actions for continuous integration, ensuring
 
 # Features
 Comprehensive piRNA Analysis: 
-Analyze piRNA sequences to identify complementary transposable element (TE) matches from TE reference sequences.
-Customizable Seed Region Parameters: 
-Define the length of the piRNA seed region, introduce mismatches for increased flexibility, and optionally search for reverse complement matches. For teleost species we recommend the defaul of 1-10 complementary base pairs, which ensure complementarity between the first 10 nucleotides of the TE. 
+- Analyze piRNA sequences to identify complementary transposable element (TE) matches from TE reference sequences.
+- Customizable Seed Region Parameters: 
+- Define the length of the piRNA seed region, introduce mismatches for increased flexibility, and optionally search for reverse complement matches. For teleost species we recommend the default of 1-10 complementary base pairs, which ensure complementarity between the first 10 nucleotides of the TE.
+- Use is able to add custom species via addition of custom teseqs.fasta and custom chrom_end.txt file. 
 TE Classification:
 - Automatically classify TE types based on comprehensive keyword matching to assign each TE to categories like DNA, LTR, LINE, SINE, RC, and Satellite.
 Data Visualization:
@@ -32,10 +33,15 @@ piRBase can be accessed [here](http://bigdata.ibp.ac.cn/piRBase/)
 If you would like to use FishPi on a reference genome other than Zebrafish (GRCz11), Medaka (oryLat2) or Tilapia (Onil_1.2), please prepare your "teseqs.fasta" file by following the same instructions written below, but by selecting appropriate organism on UCSC browser. Also check the piRNA:TE seed rules of your organism, as these can be customised pm the FishPi GUI. If you are working with the Zebrafish, Medaka or Tilapia please download all the annotated teseqs.fasta files [here](https://zenodo.org/record/13911872).
 
 To prepare your teseqs.fasta file:
-1. To generate a fasta file of the TE sequences for your reference genome, first make a .bed file. The UCSC table genome browser was used to generate the TE.bed file with these options: clade: Vertebrate, group: Variation and Repeats, genome: Zebrafish, assembly: May 2017 GRCz11, track: RepeatMasker, table: rmsk.
+1. To generate a fasta file of the TE sequences for your reference genome, first make a .bed file. The UCSC table genome browser [here](https://genome.ucsc.edu/cgi-bin/hgTables) was used to generate the TE.bed file with these options: clade: Vertebrate, group: Variation and Repeats, genome: Zebrafish, assembly: May 2017 GRCz11, track: RepeatMasker, table: rmsk.
 2. To extract DNA sequences from the reference genome based on the co-ordinates supplied in the bed file the following command was used:
    bedtools getfasta -s -name -fi Danio_rerio.GRCz11.dna.primary_assembly.fa -fo GRCz11.teseqs.use.fasta -bed GRCz11.teannotation.bed
 
+To prepare your chrom_end.txt file:
+1. Navigate to UCSC table browser [here](https://genome.ucsc.edu/cgi-bin/hgTables) , and select your species and rerference genomes as above.
+2. Under the Group drop down menu select All Tables
+3. Under the Table drop down menu select cytoBandIdeo
+4. Download as a .txt file, need first column to be chromosome names/numbers and second column to be the length of each chromosome. See examples in files directory [here](https://github.com/alicegodden/fishpi/blob/main/files/medaka_chrom_end.txt)
 
 Example output files are based on dre-piRNA-1 5'-TGGTTAGTACTTGGATGGGAGACCGCCTGGG-3', taken from piRBase. 
 
@@ -93,9 +99,8 @@ The list of complementary TE sequences as a CSV file.
 The generated plots as an image file (high resolution, suitable for publications).
 (Figure 1 shows an example of the results display and export options. Figure 2 presents a flow chart summarizing the key steps and processes undertaken by FishPi.)
 
-
+![FishPi_GUI](https://github.com/user-attachments/assets/6ebad935-6c24-4489-9da2-113b45ab3ba6)
 *Figure 1- Graphic User interface for FishPi and results for dre-piRNA 5'-TACACGAAGACTGTGGTGTGATTGGGCG-3'*
-![FishPi_GUI](https://github.com/user-attachments/assets/a7e64def-29a4-4aae-b883-5335beca54b8)
 
 
 # Flow chart of FishPi functions
