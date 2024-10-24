@@ -683,3 +683,6 @@ analyse_uploaded_button.pack()
 analyse_uploaded_button.place(x=200, y=440, width=200)
 
 app.mainloop()
+
+# Add this at the end of your main GUI script
+app.after(15000, app.destroy)  # Closes the GUI after 15 seconds
