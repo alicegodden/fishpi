@@ -1,4 +1,4 @@
-name: FishPi GUI Test
+name: FishPi Testing
 
 on:
   push:
@@ -13,23 +13,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Check out the repository
     - name: Check out the repository
       uses: actions/checkout@v4
 
-    # Step 2: Set up Python 3.11
     - name: Set up Python 3.11
       uses: actions/setup-python@v4
       with:
         python-version: 3.11
 
-    # Step 3: Install dependencies
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    # Step 4: Download TE sequence fasta files from Zenodo
     - name: Download TE sequence fasta files
       run: |
         wget -P files https://zenodo.org/record/13911872/files/GRCz11_ensembl_teseqs.fishpi.fasta.gz
@@ -41,28 +37,27 @@ jobs:
         gunzip files/Onil_1.2_ensembl_teseqs.fishpi.fasta.gz
         gunzip files/oryLat2_ensembl_teseqs.fishpi.fasta.gz
 
-    # Step 5: Install Xvfb for virtual display
+    - name: Run Unit Tests
+      run: |
+        pytest --maxfail=1 --disable-warnings
+
     - name: Install Xvfb
       run: sudo apt-get install -y xvfb
 
-    # Step 6: Start Xvfb (virtual display) and execute the script
-    - name: Run FishPi script with virtual display
+    - name: Run GUI script with virtual display
       run: |
         # Start virtual framebuffer
         Xvfb :99 -ac -screen 0 1280x1024x16 &
-        
-        # Sleep for a moment to ensure Xvfb has enough time to initialize
-        sleep 8
-
-        # Export DISPLAY environment variable
+        sleep 10
         export DISPLAY=:99
 
-        # Run the Python script (this is the FishPi.py script that creates the GUI)
-        python files/FishPi.py
+        # Run the FishPi.py script with a timeout
+        python files/FishPi.py &
+        sleep 5  # Let the GUI run for 5 seconds
+        pkill -f FishPi.py || true
       env:
         DISPLAY: ":99"
 
-    # Step 7: List directory contents to verify file locations (for debugging purposes)
-    - name: List directory contents
+    - name: List directory contents (for debugging)
       run: ls -R
       working-directory: .
