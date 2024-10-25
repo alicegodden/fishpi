@@ -87,14 +87,13 @@ sed 's/^chr\([A-Za-z0-9_]\+\)/\1/' ONil1_2_tilapia_TE.bed > ONil1_2_tilapia_TE.E
 
 sed 's/^chr\([0-9XY]\+\)/\1/' oryLat2_medaka_TE.bed > oryLat2_medaka.Ensembl.bed
  
-# 7. Extracting DNA Sequences Using bedtools
-Extract DNA sequences from the reference genome using coordinates from the BED file:
+# 7. Extract DNA sequences from the reference genome using coordinates from the BED file:
 
 bedtools getfasta -s -name -fi Danio_rerio.GRCz11.dna.primary_assembly.fa -fo GRCz11.teseqs.use.fasta -bed GRCz11.teannotation.bed
 ```
 
 To prepare your chrom_end.txt file:
-1. Navigate to UCSC table browser [here](https://genome.ucsc.edu/cgi-bin/hgTables) , and select your species and rerference genomes as above.
+1. Navigate to UCSC table browser [here](https://genome.ucsc.edu/cgi-bin/hgTables) , and select your species and reference genomes as above.
 2. Under the Group drop down menu select All Tables
 3. Under the Table drop down menu select cytoBandIdeo
 4. Download as a .txt file, need first column to be chromosome names/numbers and second column to be the length of each chromosome. See examples in files directory [here](https://github.com/alicegodden/fishpi/blob/main/files/medaka_chrom_end.txt)
