@@ -49,18 +49,18 @@ perl makeTEgtf.pl -c 6 -s 7 -e 8 -o 10 -t 11 fish_rmsk > fish_TE.gtf
 
    
 The makeTEgtf.pl script was created by Oliver Tam from the Hammel lab and can be found here. Make sure to uncompress it before use. Here is the usage for this script:
-```bash
+
 Usage: makeTEgtf.pl -c [chrom column] -s [start column] -e [stop/end column] 
                      -o [strand column] -n [source] -t [TE name column] 
                      (-f [TE family column] -C [TE class column] -1) 
                      [INFILE]
 
-4. We removed extra columns using:
-```bash
+# 4. We removed extra columns using:
+
 cut -f1,2,3,4,5,7,8,9,10,11,12,13,14,15,16 fish_TE.gtf > fish_TE.use.gtf
    
-5. To make initial bed file we use this awk script:
-```bash
+# 5. To make initial bed file we use this awk script:
+
  awk 'BEGIN {OFS="\t"} 
     {
         if ($3 == "exon") {
@@ -75,18 +75,18 @@ cut -f1,2,3,4,5,7,8,9,10,11,12,13,14,15,16 fish_TE.gtf > fish_TE.use.gtf
         }
     }' fish_TE.use.gtf > fish_medaka_TE.bed
 
-7. To make into a bed file taking into account difference chromosome naming and numbering:
+# 6. To make into a bed file taking into account difference chromosome naming and numbering:
    
-For tilapia:
-```bash
+# For tilapia:
+
 sed 's/^chr\([A-Za-z0-9_]\+\)/\1/' ONil1_2_tilapia_TE.bed > ONil1_2_tilapia_TE.Ensembl.bed
 
-For Medaka and Zebrafish:
-```bash
+# For Medaka and Zebrafish:
+
 sed 's/^chr\([0-9XY]\+\)/\1/' oryLat2_medaka_TE.bed > oryLat2_medaka.Ensembl.bed
  
-8. To extract DNA sequences from the reference genome based on the co-ordinates supplied in the bed file the following command was used:
-```bash
+7. To extract DNA sequences from the reference genome based on the co-ordinates supplied in the bed file the following command was used:
+
 bedtools getfasta -s -name -fi Danio_rerio.GRCz11.dna.primary_assembly.fa -fo GRCz11.teseqs.use.fasta -bed GRCz11.teannotation.bed
 
 To prepare your chrom_end.txt file:
