@@ -2,7 +2,6 @@
 # FishPi
 [![FishPi Tests](https://github.com/alicegodden/fishpi/actions/workflows/python-test.yml/badge.svg)](https://github.com/alicegodden/fishpi/actions/workflows/python-test.yml)
 
-Created by Dr. Alice M. Godden & Dr. Benjamin Rix, 2024
 
 # FishPi: A Powerful Tool for piRNA Analysis
 FishPi is a cutting-edge, Python-powered solution for piRNA sequence analysis, designed to swiftly identify complementary transposable element (TE) sequences from individual piRNA sequences or entire fasta files. Featuring an intuitive graphical user interface built with tkinter, vivid data visualizations through matplotlib, and high-quality image rendering with Pillow, FishPi makes complex genomic analysis accessible and visually compelling. Export your results and high-resolution plots effortlessly, making FishPi ideal for downstream analysis and publication-ready outputs.
