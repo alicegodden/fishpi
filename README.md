@@ -41,14 +41,14 @@ To prepare your custom teseqs.fasta file:
 
 ## Generating the TE GTF File
 
-Run the following command to generate the `fish_TE.gtf` file using the `makeTEgtf.pl` script:
 
 ```bash
+# Run the following command to generate the `fish_TE.gtf` file using the `makeTEgtf.pl` script:
 perl makeTEgtf.pl -c 6 -s 7 -e 8 -o 10 -t 11 fish_rmsk > fish_TE.gtf
 
 
    
-The makeTEgtf.pl script was created by Oliver Tam from the Hammel lab and can be found here. Make sure to uncompress it before use. Here is the usage for this script:
+# The makeTEgtf.pl script was created by Oliver Tam from the Hammel lab and can be found here. Make sure to uncompress it before use. Here is the usage for this script:
 
 Usage: makeTEgtf.pl -c [chrom column] -s [start column] -e [stop/end column] 
                      -o [strand column] -n [source] -t [TE name column] 
@@ -92,7 +92,8 @@ Extract DNA sequences from the reference genome using coordinates from the BED f
 
 bedtools getfasta -s -name -fi Danio_rerio.GRCz11.dna.primary_assembly.fa -fo GRCz11.teseqs.use.fasta -bed GRCz11.teannotation.bed
 
-## To prepare your chrom_end.txt file:
+
+To prepare your chrom_end.txt file:
 1. Navigate to UCSC table browser [here](https://genome.ucsc.edu/cgi-bin/hgTables) , and select your species and rerference genomes as above.
 2. Under the Group drop down menu select All Tables
 3. Under the Table drop down menu select cytoBandIdeo
