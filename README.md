@@ -50,10 +50,10 @@ perl makeTEgtf.pl -c 6 -s 7 -e 8 -o 10 -t 11 fish_rmsk > fish_TE.gtf
    
 # The makeTEgtf.pl script was created by Oliver Tam from the Hammel lab and can be found here. Make sure to uncompress it before use. Here is the usage for this script:
 
-Usage: makeTEgtf.pl -c [chrom column] -s [start column] -e [stop/end column] 
-                     -o [strand column] -n [source] -t [TE name column] 
-                     (-f [TE family column] -C [TE class column] -1) 
-                     [INFILE]
+# Usage: makeTEgtf.pl -c [chrom column] -s [start column] -e [stop/end column] 
+                    # -o [strand column] -n [source] -t [TE name column] 
+                    # (-f [TE family column] -C [TE class column] -1) 
+                    # [INFILE]
 
 # 4. Removing Extra Columns
 # Use the following command to retain only necessary columns in fish_TE.gtf:
