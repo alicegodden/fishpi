@@ -51,7 +51,7 @@ To prepare your custom teseqs.fasta file:
    
 5. To make initial bed file we use this awk script:
 
-awk 'BEGIN {OFS="\t"} 
+   awk 'BEGIN {OFS="\t"} 
     {
         if ($3 == "exon") {
             # Extract gene_id, transcript_id, and family_id using regex matching
@@ -66,10 +66,13 @@ awk 'BEGIN {OFS="\t"}
     }' fish_TE.use.gtf > fish_medaka_TE.bed
 
 7. To make into a bed file taking into account difference chromosome naming and numbering:
+   
 For tilapia:
 sed 's/^chr\([A-Za-z0-9_]\+\)/\1/' ONil1_2_tilapia_TE.bed > ONil1_2_tilapia_TE.Ensembl.bed
+
 For Medaka and Zebrafish:
  sed 's/^chr\([0-9XY]\+\)/\1/' oryLat2_medaka_TE.bed > oryLat2_medaka.Ensembl.bed
+ 
 8. To extract DNA sequences from the reference genome based on the co-ordinates supplied in the bed file the following command was used:
    bedtools getfasta -s -name -fi Danio_rerio.GRCz11.dna.primary_assembly.fa -fo GRCz11.teseqs.use.fasta -bed GRCz11.teannotation.bed
 
