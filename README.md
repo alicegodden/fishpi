@@ -75,8 +75,7 @@ cut -f1,2,3,4,5,7,8,9,10,11,12,13,14,15,16 fish_TE.gtf > fish_TE.use.gtf
         }
     }' fish_TE.use.gtf > fish_medaka_TE.bed
 
-# 6. Converting Chromosome Names in BED Files
-#Adjust chromosome names to match different genome naming conventions:
+# 6. Adjust chromosome names to match different genome naming conventions:
    
 # For tilapia:
 
