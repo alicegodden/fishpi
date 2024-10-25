@@ -91,7 +91,7 @@ sed 's/^chr\([0-9XY]\+\)/\1/' oryLat2_medaka_TE.bed > oryLat2_medaka.Ensembl.bed
 Extract DNA sequences from the reference genome using coordinates from the BED file:
 
 bedtools getfasta -s -name -fi Danio_rerio.GRCz11.dna.primary_assembly.fa -fo GRCz11.teseqs.use.fasta -bed GRCz11.teannotation.bed
-
+```
 
 To prepare your chrom_end.txt file:
 1. Navigate to UCSC table browser [here](https://genome.ucsc.edu/cgi-bin/hgTables) , and select your species and rerference genomes as above.
