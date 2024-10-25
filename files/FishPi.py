@@ -138,6 +138,15 @@ def get_complementary_base(base: str) -> str:
     complement = {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}
     return complement.get(base, base)
 
+# Function to calculate the percentage complementarity after the seed
+def calculate_complementarity_percentage_after_seed(piRNA_sequence: str, te_sequence: str, seed_end: int) -> float:
+    """Calculate the percentage of the piRNA sequence after the seed region that is complementary to the TE sequence."""
+    piRNA_after_seed = piRNA_sequence[seed_end:]
+    te_sequence_part = te_sequence[:len(piRNA_after_seed)]  # Aligns length with piRNA after the seed
+
+    matching_bases = sum(1 for p, t in zip(piRNA_after_seed, te_sequence_part) if p == get_complementary_base(t))
+    return (matching_bases / len(piRNA_after_seed)) * 100 if piRNA_after_seed else 0.0
+
 
 # Function to perform the analysis
 def analyse_sequence() -> None:
@@ -210,14 +219,18 @@ def analyse_sequence() -> None:
                     te_sequence = next(fasta_file).strip()
 
                     te_type = classify_te_type(te_name)
-                    if te_type in te_type_counts and (
-                            is_complementary(piRNA_substring_with_mismatches,
-                                             te_sequence, False) or
-                            (reverse_complement_search and is_complementary
-                                (piRNA_substring_with_mismatches,
-                                 te_sequence, True))):
+                    if te_type in te_type_counts:
+                        if is_complementary(piRNA_substring_with_mismatches, te_sequence, False):
+                            orientation = "Forward"
+                            complementarity_after_seed = calculate_complementarity_percentage_after_seed(piRNA_sequence, te_sequence, end)
+                        elif reverse_complement_search and is_complementary(piRNA_substring_with_mismatches, te_sequence, True):
+                            orientation = "Reverse"
+                            complementarity_after_seed = calculate_complementarity_percentage_after_seed(piRNA_sequence, te_sequence[::-1], end)
+                        else:
+                            continue  # Skip if not complementary
+
                         te_type_counts[te_type] += 1
-                        complementary_TE_list.append((te_name, te_sequence))
+                        complementary_TE_list.append((te_name, te_sequence, orientation, complementarity_after_seed))
 
                 # Update progress if necessary
                 if line_number % 100 == 0 or line_number == total_lines - 1:
@@ -407,6 +420,7 @@ def create_results() -> None:
 
     plot_te_chromosomal_locations()
 
+
 # Define a function to plot TE chromosomal locations with PuOr colormap
 def plot_te_chromosomal_locations() -> None:
     global fig_chrom
@@ -474,7 +488,7 @@ def plot_te_chromosomal_locations() -> None:
 
     # Plot TE locations with colors from the te_colors dictionary
     te_types_plotted = set()
-    for te_name, _ in complementary_TE_list:
+    for te_name, _, _, _ in complementary_TE_list:
         parts = te_name.split("::")
         if len(parts) < 2:
             continue
@@ -553,12 +567,16 @@ def export_complementary_te_list() -> None:
                                       "(e.g., complementary_TE_list.csv):")
     if filename:
         with open(filename, "w", newline="") as csvfile:
-            fieldnames = ["TE Name", "TE Sequence"]
+            fieldnames = ["TE Name", "TE Sequence", "Orientation", "Complementarity % after seed"]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
-            for te_name, te_sequence in complementary_TE_list:
-                writer.writerow({"TE Name": te_name,
-                                 "TE Sequence": te_sequence})
+            for te_name, te_sequence, orientation, complementarity_after_seed in complementary_TE_list:
+                writer.writerow({
+                    "TE Name": te_name,
+                    "TE Sequence": te_sequence,
+                    "Orientation": orientation,
+                    "Complementarity % after seed": f"{complementarity_after_seed:.2f}"
+                })
         messagebox.showinfo("File Saved",
                             f"Complementary TE List saved to {filename}")
 
