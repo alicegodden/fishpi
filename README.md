@@ -55,11 +55,12 @@ Usage: makeTEgtf.pl -c [chrom column] -s [start column] -e [stop/end column]
                      (-f [TE family column] -C [TE class column] -1) 
                      [INFILE]
 
-# 4. We removed extra columns using:
+# 4. Removing Extra Columns
+# Use the following command to retain only necessary columns in fish_TE.gtf:
 
 cut -f1,2,3,4,5,7,8,9,10,11,12,13,14,15,16 fish_TE.gtf > fish_TE.use.gtf
    
-# 5. To make initial bed file we use this awk script:
+# 5. Convert the fish_TE.use.gtf file into a BED format using this awk script:
 
  awk 'BEGIN {OFS="\t"} 
     {
@@ -75,7 +76,8 @@ cut -f1,2,3,4,5,7,8,9,10,11,12,13,14,15,16 fish_TE.gtf > fish_TE.use.gtf
         }
     }' fish_TE.use.gtf > fish_medaka_TE.bed
 
-# 6. To make into a bed file taking into account difference chromosome naming and numbering:
+# 6. Converting Chromosome Names in BED Files
+#Adjust chromosome names to match different genome naming conventions:
    
 # For tilapia:
 
@@ -85,11 +87,12 @@ sed 's/^chr\([A-Za-z0-9_]\+\)/\1/' ONil1_2_tilapia_TE.bed > ONil1_2_tilapia_TE.E
 
 sed 's/^chr\([0-9XY]\+\)/\1/' oryLat2_medaka_TE.bed > oryLat2_medaka.Ensembl.bed
  
-7. To extract DNA sequences from the reference genome based on the co-ordinates supplied in the bed file the following command was used:
+# 7. Extracting DNA Sequences Using bedtools
+Extract DNA sequences from the reference genome using coordinates from the BED file:
 
 bedtools getfasta -s -name -fi Danio_rerio.GRCz11.dna.primary_assembly.fa -fo GRCz11.teseqs.use.fasta -bed GRCz11.teannotation.bed
 
-To prepare your chrom_end.txt file:
+## To prepare your chrom_end.txt file:
 1. Navigate to UCSC table browser [here](https://genome.ucsc.edu/cgi-bin/hgTables) , and select your species and rerference genomes as above.
 2. Under the Group drop down menu select All Tables
 3. Under the Table drop down menu select cytoBandIdeo
