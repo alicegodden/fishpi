@@ -120,6 +120,8 @@ Rolling Circle (RC) Transposons: Helitron
 Satellite Repeats: BRSATI, MOSAT
 These groupings help to identify and quantify complementary TEs in the analyzed piRNA sequence, providing a comprehensive overview of TE relationships.
 
+In the output csv file for complementary piRNA:TEs we have added the orientation of the piRNA seed binding to the TE under the column "Orientation". This will work best if the "Reverse complement" option is selected. Additionally, a column "Comlementarity % after seed" shows the percentage of the rest of the piRNA sequence (excluding seed) that is complementary to the TE. This can be treated like a score, and we encourage users to filter results with some additional complementarity. While not much is known this may help narrow down target TEs.
+
 # Licence
 This project is distributed under the GNU General Public License (GPL), which ensures that it remains open source and freely accessible for use.
 
