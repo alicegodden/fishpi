@@ -21,7 +21,7 @@ complementary_TE_list: List[Tuple[str, str]] = []
 fig = None
 fig_chrom = None
 popup_window = None
-uploaded_pirna_sequences: List[str] = []
+uploaded_pirna_sequences: List[Tuple[str, str]] = []  # Store (name, sequence)
 progress_window = None
 progress_bar = None
 counted_te_names = set()
@@ -38,7 +38,6 @@ except ImportError:
     os.dup2(f.fileno(), 2)
     f.close()
 
-
 # Create a dictionary to count TE types
 te_type_counts: Dict[str, int] = {
     "DNA": 0,
@@ -48,7 +47,6 @@ te_type_counts: Dict[str, int] = {
     "RC": 0,
     "SATELLITE": 0,
 }
-
 
 # Define file paths for each species
 species_files: Dict[str, Dict[str, str]] = {
@@ -88,6 +86,7 @@ def classify_te_type(te_name: str) -> str:
         (["helitron", "rc"], "RC"),
         (["brsati", "mosat", "sat"], "SATELLITE"),
     ]
+
     for keyword_list, te_type in keyword_mapping:
         if any(keyword.lower() in te_name_lower for keyword in keyword_list):
             return te_type
@@ -149,8 +148,11 @@ def get_complementary_base(base: str) -> str:
 def calc_comp_percent(
     piRNA_sequence: str, te_sequence: str, seed_end: int
 ) -> float:
-    """Calculate the percentage of the piRNA sequence after the seed region
-    that is complementary to the TE sequence."""
+
+    """Calculate the percentage of
+    the piRNA sequence
+    after the seed region that is
+    complementary to the TE sequence."""
     piRNA_after_seed = piRNA_sequence[seed_end:]
     # Aligns length with piRNA after the seed
     te_sequence_part = te_sequence[:len(piRNA_after_seed)]
@@ -189,9 +191,10 @@ def analyse_sequence() -> None:
     counted_te_names.clear()
 
     # Get the new piRNA sequence
-    piRNA_sequence = piRNA_entry.get()
-    if not piRNA_sequence and uploaded_pirna_sequences:
-        piRNA_sequence = uploaded_pirna_sequences.pop(0)
+    if uploaded_pirna_sequences:
+        piRNA_name, piRNA_sequence = uploaded_pirna_sequences.pop(0)
+    else:
+        piRNA_name, piRNA_sequence = "Manual Entry", piRNA_entry.get()
 
     # Get the range for the piRNA substring from the user input
     range_input = search_range_entry.get()
@@ -272,6 +275,7 @@ def analyse_sequence() -> None:
                         te_type_counts[te_type] += 1
                         complementary_TE_list.append(
                             (
+                                piRNA_name,
                                 te_name,
                                 te_sequence,
                                 orientation,
@@ -393,6 +397,7 @@ def move_fish(progress_value: float) -> None:
 # Create results window with plots
 def create_results() -> None:
     global fig, fig_chrom, popup_window
+
     # Create bar chart of TE counts using PuOr colormap
     te_types = list(te_type_counts.keys())
     counts = [te_type_counts[te_type] for te_type in te_types]
@@ -478,6 +483,7 @@ def create_results() -> None:
 # Define a function to plot TE chromosomal locations with PuOr colormap
 def plot_te_chromosomal_locations() -> None:
     global fig_chrom
+
     # Determine the selected species for TE reference file
     species = species_var.get()
     chrom_end_file = species_files[species]["chrom_end"]
@@ -541,7 +547,7 @@ def plot_te_chromosomal_locations() -> None:
 
     # Plot TE locations with colors from the te_colors dictionary
     te_types_plotted = set()
-    for te_name, _, _, _ in complementary_TE_list:
+    for _, te_name, _, _, _ in complementary_TE_list:
         parts = te_name.split("::")
         if len(parts) < 2:
             continue
@@ -620,15 +626,15 @@ def export_complementary_te_list() -> None:
                                       "(e.g., complementary_TE_list.csv):")
     if filename:
         with open(filename, "w", newline="") as csvfile:
-            fieldnames = ["piRNA Name", "TE Name",
-                          "TE Sequence", "Orientation",
+            fieldnames = ["piRNA Name", "TE Name", "TE Sequence",
+                          "Orientation",
                           "Complementarity % after seed"]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
-            for (te_name, te_sequence, orientation,
+            for (piRNA_name, te_name, te_sequence, orientation,
                  complementarity_after_seed) in complementary_TE_list:
                 writer.writerow({
-                    "piRNA Name": piRNA_entry.get(),
+                    "piRNA Name": piRNA_name,
                     "TE Name": te_name,
                     "TE Sequence": te_sequence,
                     "Orientation": orientation,
@@ -663,8 +669,11 @@ def upload_pirna_file() -> None:
             for sequence in piRNA_sequences:
                 if sequence:
                     lines = sequence.splitlines()
+                    piRNA_name = lines[0]
                     piRNA_sequence = ''.join(lines[1:])
-                    uploaded_pirna_sequences.append(piRNA_sequence)
+                    uploaded_pirna_sequences.append(
+                        (piRNA_name, piRNA_sequence)
+                    )
         messagebox.showinfo("File Uploaded",
                             "piRNA file uploaded successfully. "
                             "Click 'Analyse Uploaded piRNA' to proceed.")
