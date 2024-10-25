@@ -44,8 +44,9 @@ To prepare your custom teseqs.fasta file:
                      [INFILE]
 4. We removed extra columns using: cut -f1,2,3,4,5,7,8,9,10,11,12,13,14,15,16 fish_TE.gtf > fish_TE.use.gtf
 5. To make initial bed file we use this awk script:
-6. 
-awk 'BEGIN {OFS="\t"} 
+
+
+awk 'BEGIN {OFS="\t"} # making initial bed file
     {
         if ($3 == "exon") {
             # Extract gene_id, transcript_id, and family_id using regex matching
