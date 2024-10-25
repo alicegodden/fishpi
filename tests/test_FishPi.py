@@ -38,6 +38,7 @@ except ImportError:
     os.dup2(f.fileno(), 2)
     f.close()
 
+
 # Create a dictionary to count TE types
 te_type_counts: Dict[str, int] = {
     "DNA": 0,
@@ -47,6 +48,7 @@ te_type_counts: Dict[str, int] = {
     "RC": 0,
     "SATELLITE": 0,
 }
+
 
 # Define file paths for each species
 species_files: Dict[str, Dict[str, str]] = {
@@ -86,7 +88,6 @@ def classify_te_type(te_name: str) -> str:
         (["helitron", "rc"], "RC"),
         (["brsati", "mosat", "sat"], "SATELLITE"),
     ]
-
     for keyword_list, te_type in keyword_mapping:
         if any(keyword.lower() in te_name_lower for keyword in keyword_list):
             return te_type
@@ -148,11 +149,8 @@ def get_complementary_base(base: str) -> str:
 def calc_comp_percent(
     piRNA_sequence: str, te_sequence: str, seed_end: int
 ) -> float:
-
-    """Calculate the percentage of
-    the piRNA sequence
-    after the seed region that is
-    complementary to the TE sequence."""
+    """Calculate the percentage of the piRNA sequence after the seed region
+    that is complementary to the TE sequence."""
     piRNA_after_seed = piRNA_sequence[seed_end:]
     # Aligns length with piRNA after the seed
     te_sequence_part = te_sequence[:len(piRNA_after_seed)]
@@ -165,6 +163,17 @@ def calc_comp_percent(
         (matching_bases / len(piRNA_after_seed)) * 100
         if piRNA_after_seed else 0.0
     )
+
+
+# Function to reset inputs and clear state in the main window
+def reset_inputs():
+    piRNA_entry.delete(0, 'end')
+    search_range_entry.delete(0, 'end')
+    mismatch_entry.delete(0, 'end')
+    species_var.set("zebrafish")
+    complementary_TE_list.clear()
+    te_type_counts.update({k: 0 for k in te_type_counts})
+    counted_te_names.clear()
 
 
 # Function to perform the analysis
@@ -384,7 +393,6 @@ def move_fish(progress_value: float) -> None:
 # Create results window with plots
 def create_results() -> None:
     global fig, fig_chrom, popup_window
-
     # Create bar chart of TE counts using PuOr colormap
     te_types = list(te_type_counts.keys())
     counts = [te_type_counts[te_type] for te_type in te_types]
@@ -422,6 +430,14 @@ def create_results() -> None:
     popup_window = tk.Toplevel(app)
     popup_window.title("Complementary TE Counts")
     popup_window.geometry("1600x800")
+
+    # Reset inputs on close
+    def on_close():
+        popup_window.destroy()
+        reset_inputs()
+
+    popup_window.protocol("WM_DELETE_WINDOW", on_close)
+    # Override close behavior
 
     # Layout for the bar chart and buttons
     bar_chart_frame = tk.Frame(popup_window)
@@ -462,7 +478,6 @@ def create_results() -> None:
 # Define a function to plot TE chromosomal locations with PuOr colormap
 def plot_te_chromosomal_locations() -> None:
     global fig_chrom
-
     # Determine the selected species for TE reference file
     species = species_var.get()
     chrom_end_file = species_files[species]["chrom_end"]
@@ -605,13 +620,15 @@ def export_complementary_te_list() -> None:
                                       "(e.g., complementary_TE_list.csv):")
     if filename:
         with open(filename, "w", newline="") as csvfile:
-            fieldnames = ["TE Name", "TE Sequence", "Orientation",
+            fieldnames = ["piRNA Name", "TE Name",
+                          "TE Sequence", "Orientation",
                           "Complementarity % after seed"]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
             for (te_name, te_sequence, orientation,
                  complementarity_after_seed) in complementary_TE_list:
                 writer.writerow({
+                    "piRNA Name": piRNA_entry.get(),
                     "TE Name": te_name,
                     "TE Sequence": te_sequence,
                     "Orientation": orientation,
