@@ -20,7 +20,7 @@ TE Classification:
 Data Visualization:
 - Generate bar charts to visualize complementary TE counts by type, providing immediate insights into sequence relationships.
 Export Functionality:
-- Export the list of complementary TE sequences, complete with scoring and orientation to CSV file for further analysis.
+- Export the list of complementary TE sequences, complete with scoring and orientation to CSV file for further analysis- see example example_output_piRNATE_file.csv in files directory.
 - Export generated bar charts as high-resolution image files for reports, presentations, and publication purposes.
 
 # Input file preparation
