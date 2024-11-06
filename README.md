@@ -156,7 +156,7 @@ The generated plots as an image file (high resolution, suitable for publications
 
 ![FishPi_GUI](https://github.com/user-attachments/assets/7f8e43a7-3c5a-4479-9d6d-82ce000906a5)
 
-*Figure 1- Graphic User interface for FishPi and results for piRNA-dre-10247 sequence- 5'-TGTTGACTAGGGCAAGGGCACTCTGATGC - 3'. Asterisk denotes P = < 0.05 from binomial distribution test for enrichment of TE family.*
+*Figure 1- Graphic User interface (A) with animated progress bar (B) for FishPi and results for piRNA-dre-10247 sequence- 5'-TGTTGACTAGGGCAAGGGCACTCTGATGC - 3'. (C) Bar chart with statistical testing for enrichment of TE family, asterisk denotes P = < 0.05 from binomial distribution test for enrichment of TE family, and chromosomal plot of TE loci.*
 
 
 
