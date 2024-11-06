@@ -413,11 +413,14 @@ def create_results() -> None:
     fig, ax = plt.subplots()
     ax.bar(te_types, counts, color=colors)
     ax.set_xlabel("TE Classification", fontweight='bold')
-    ax.set_ylabel("Count", fontweight='bold')
+    ax.set_ylabel("Log Count", fontweight='bold')
     ax.set_title("Complementary TE Counts by Type", fontweight='bold')
     plt.xticks(fontweight='bold')
     plt.yticks(fontweight='bold')
     plt.grid(alpha=0.5)
+
+    # set y-axis to log scale for logarithmic plotting
+    ax.set_yscale('log')
 
     # Add enrichment information to bar chart using a binomial test
     total_te_types = sum(te_type_counts.values())
