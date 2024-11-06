@@ -152,7 +152,9 @@ The list of complementary TE sequences as a CSV file.
 The generated plots as an image file (high resolution, suitable for publications).
 (Figure 1 shows an example of the results display and export options. Figure 2 presents a flow chart summarizing the key steps and processes undertaken by FishPi.)
 
-![FishPi_GUI][fishpi_gui](https://github.com/user-attachments/assets/6f7545f3-62a9-44a9-8170-4df80f669da5)
+
+
+![FishPi_GUI](https://github.com/user-attachments/assets/7f8e43a7-3c5a-4479-9d6d-82ce000906a5)
 
 *Figure 1- Graphic User interface for FishPi and results for piRNA-dre-10247 sequence- 5'-TGTTGACTAGGGCAAGGGCACTCTGATGC - 3' *
 
