@@ -7,7 +7,7 @@
 FishPi is a cutting-edge, Python-powered solution for piRNA sequence analysis, designed to swiftly identify complementary transposable element (TE) sequences from individual piRNA sequences or entire fasta files. Featuring an intuitive graphical user interface built with tkinter, vivid data visualizations through matplotlib, and high-quality image rendering with Pillow, FishPi makes complex genomic analysis accessible and visually compelling. Export your results and high-resolution plots effortlessly, making FishPi ideal for downstream analysis and publication-ready outputs.
 
 # Performance Benchmark and System Requirements
-FishPi was benchmarked using GitHub Actions for continuous integration, ensuring reliable performance across different environments. The entire database of piRNA sequences from piRNADB (5000+ piRNA sequences) was tested, requiring less than 3 GB of memory and taking 1-2 minutes to generate plots and outputs on a standard machine. FishPi was developed using Python v3.11. For full requirements, see requirements.txt.
+FishPi was benchmarked using GitHub Actions for continuous integration, ensuring reliable performance across different environments. The entire database of piRNA sequences from piRNADB (5000+ piRNA sequences) was tested, requiring less than 3 GB of memory and taking 1-2 minutes to generate plots and outputs on a standard machine. FishPi was developed using Python v3.11. For full requirements, see requirements.txt here [https://github.com/alicegodden/fishpi/blob/main/requirements.txt].
 
 # Features
 Comprehensive piRNA Analysis: 
