@@ -138,11 +138,6 @@ Download TE Sequence Files: Additionally, download the required TE sequence file
 
 To install packages:
 ```
-# Navigate to fishpi parent directory in your sidebar
-# To install packages run:
-
-pip install -r requirements.txt
-
 # Make sure you have all the packages in requirements.txt installed in Pycharm, these will be flagged up to you as errors if not installed in the Problems area.
 # If any packages are not installed use:
 
