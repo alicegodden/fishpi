@@ -29,7 +29,7 @@ total_lines: int = 0
 pie_slices = []  # List to keep track of pie slice labels
 
 try:
-    import Tkinter as tk  # Python 2
+    import tkinter as tk  # Python 2
 except ImportError:
     import tkinter as tk  # Python 3
 
