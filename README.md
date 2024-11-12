@@ -54,12 +54,12 @@ perl makeTEgtf.pl -c 6 -s 7 -e 8 -o 10 -t 11 fish_rmsk > fish_TE.gtf
                     # (-f [TE family column] -C [TE class column] -1) 
                     # [INFILE]
 
-# 4. Removing Extra Columns
+# Removing Extra Columns
 # Use the following command to retain only necessary columns in fish_TE.gtf:
 
 cut -f1,2,3,4,5,7,8,9,10,11,12,13,14,15,16 fish_TE.gtf > fish_TE.use.gtf
    
-# 5. Convert the fish_TE.use.gtf file into a BED format using this awk script:
+# Convert the fish_TE.use.gtf file into a BED format using this awk script:
 
  awk 'BEGIN {OFS="\t"} 
     {
@@ -75,7 +75,7 @@ cut -f1,2,3,4,5,7,8,9,10,11,12,13,14,15,16 fish_TE.gtf > fish_TE.use.gtf
         }
     }' fish_TE.use.gtf > fish_medaka_TE.bed
 
-# 6. Adjust chromosome names to match different genome naming conventions:
+# Adjust chromosome names to match different genome naming conventions:
    
 # For tilapia:
 
@@ -85,7 +85,7 @@ sed 's/^chr\([A-Za-z0-9_]\+\)/\1/' ONil1_2_tilapia_TE.bed > ONil1_2_tilapia_TE.E
 
 sed 's/^chr\([0-9XY]\+\)/\1/' oryLat2_medaka_TE.bed > oryLat2_medaka.Ensembl.bed
  
-# 7. Extract DNA sequences from the reference genome using coordinates from the BED file:
+# Extract DNA sequences from the reference genome using coordinates from the BED file:
 
 bedtools getfasta -s -name -fi Danio_rerio.GRCz11.dna.primary_assembly.fa -fo GRCz11.teseqs.use.fasta -bed GRCz11.teannotation.bed
 ```
