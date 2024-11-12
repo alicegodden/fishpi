@@ -131,19 +131,19 @@ python FishPi.py # opens the GUI to use FishPi
 ```
 # Using FishPi with PyCharm IDE
 To get started with FishPi in PyCharm:
-
+First of all make sure you are using Python 3.11 in your interpreter.
 Download Project Files: Make sure you download all necessary files from  [here](https://github.com/alicegodden/fishpi/tree/main/files). Place these files into your working directory within PyCharm, ensuring that they are accessible to your Python scripts.
 
 Download TE Sequence Files: Additionally, download the required TE sequence files from Zenodo  [here](https://zenodo.org/record/13911872). Extract these files to uncompress them, and place them in the same working directory for seamless integration with FishPi.
 
 To install packages:
 ```
+
 # Make sure you have all the packages in requirements.txt installed in Pycharm, these will be flagged up to you as errors if not installed in the Problems area.
 # If any packages are not installed use:
+cd fishpi # make sure you are in the fishpi directory from the FishPi download
+pip install -r requirements.txt
 
-pip install <packagename>
-
-#Or use the Python packages button to install each package individually.
 ```
 
 
