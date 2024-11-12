@@ -138,7 +138,7 @@ Download TE Sequence Files: Additionally, download the required TE sequence file
 
 To install packages:
 ```
-# Navigate to fishpi parenr directory in your sidebar
+# Navigate to fishpi parent directory in your sidebar
 # To install packages run:
 
 pip install -r requirements.txt
