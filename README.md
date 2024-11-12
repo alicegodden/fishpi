@@ -136,13 +136,20 @@ Download Project Files: Make sure you download all necessary files from  [here](
 
 Download TE Sequence Files: Additionally, download the required TE sequence files from Zenodo  [here](https://zenodo.org/record/13911872). Extract these files to uncompress them, and place them in the same working directory for seamless integration with FishPi.
 
-To install packages:
+To obtain TE fasta files and install packages:
 ```
+# First you will need to make sure you have all your FishPi files
+cd fishpi # make sure you are in the fishpi directory from the FishPi download
+
+# In the terminal box in Pycharm you can run wget to acquire the decompressed fasta files if you have not already done so:
+wget https://zenodo.org/records/13975588/files/GRCz11_ensembl_teseqs.fishpi.fasta # For Zebrafish
+wget https://zenodo.org/records/13975588/files/Onil_1.2_ensembl_teseqs.fishpi.fasta # For Tilapia
+wget https://zenodo.org/records/13975588/files/oryLat2_ensembl_teseqs.fishpi.fasta # For Medaka
 
 # Make sure you have all the packages in requirements.txt installed in Pycharm, these will be flagged up to you as errors if not installed in the Problems area.
 # If any packages are not installed use:
-cd fishpi # make sure you are in the fishpi directory from the FishPi download
-pip install -r requirements.txt
+
+pip install -r requirements.txt # This will install all packages at the required versions.
 
 ```
 
