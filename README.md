@@ -134,23 +134,23 @@ To get started with FishPi in PyCharm:
 First of all make sure you are using Python 3.11 in your interpreter.
 Download Project Files: Make sure you download all necessary files from  [here](https://github.com/alicegodden/fishpi/tree/main/files). Place these files into your working directory within PyCharm, ensuring that they are accessible to your Python scripts.
 
-Download TE Sequence Files: Additionally, download the required TE sequence files from Zenodo  [here](https://zenodo.org/record/13911872). Extract these files to uncompress them, and place them in the same working directory for seamless integration with FishPi.
+Download TE Sequence Files: Additionally, download the required TE sequence files ".fasta" only for GRCz11, Onil and  and OryLat2, from Zenodo  [here]((https://zenodo.org/records/13975588)). Place these files in the fishpi/files directory to run FishPi.
 
 To obtain TE fasta files and install packages:
 ```
 # First you will need to make sure you have all your FishPi files
 cd fishpi # make sure you are in the fishpi directory from the FishPi download
+cd files # make sure you are in the files directory, this is where any outputs will be saved to
 
-# In the terminal box in Pycharm you can run wget to acquire the decompressed fasta files if you have not already done so:
-wget https://zenodo.org/records/13975588/files/GRCz11_ensembl_teseqs.fishpi.fasta # For Zebrafish
-wget https://zenodo.org/records/13975588/files/Onil_1.2_ensembl_teseqs.fishpi.fasta # For Tilapia
-wget https://zenodo.org/records/13975588/files/oryLat2_ensembl_teseqs.fishpi.fasta # For Medaka
+# Make sure you have already downloaded your files to the fishpi/files/ file path in your Pycharm project
+# You can download the file and drag and drop into the folder as an alternative
 
 # Make sure you have all the packages in requirements.txt installed in Pycharm, these will be flagged up to you as errors if not installed in the Problems area.
 # If any packages are not installed use:
 
 pip install -r requirements.txt # This will install all packages at the required versions.
 
+# To run fishpi click the green play icon 
 ```
 
 
