@@ -134,7 +134,7 @@ To get started with FishPi in PyCharm:
 First of all make sure you are using Python 3.11 in your interpreter.
 Download Project Files: Make sure you download all necessary files from  [here](https://github.com/alicegodden/fishpi/tree/main/files). Place these files into your working directory within PyCharm, ensuring that they are accessible to your Python scripts.
 
-Download TE Sequence Files: Additionally, download the required TE sequence files ".fasta" only for GRCz11, Onil and  and OryLat2, from Zenodo  [here]((https://zenodo.org/records/13975588)). Place these files in the fishpi/files directory to run FishPi.
+Download TE Sequence Files: Additionally, download the required TE sequence files ".fasta" only for GRCz11, Onil and  and OryLat2, from Zenodo   [here](https://zenodo.org/records/13975588). Place these files in the fishpi/files directory to run FishPi.
 
 To obtain TE fasta files and install packages:
 ```
