@@ -29,7 +29,7 @@ SmallRNAGroup's databse of species piRNAs and piRNA clusters is linked [here](ht
 See Drerio_piRNAs_test_sRNAlab.fasta as example for required fasta format input for Fishpi piRNA sequences.
 piRBase can be accessed [here](http://bigdata.ibp.ac.cn/piRBase/) 
 
-If you would like to use FishPi on a reference genome other than Zebrafish (GRCz11), Medaka (oryLat2) or Tilapia (Onil_1.2), please prepare your "teseqs.fasta" file by following the same instructions written below, but by selecting appropriate organism on UCSC browser. Also check the piRNA:TE seed rules of your organism, as these can be customised pm the FishPi GUI. If you are working with the Zebrafish, Medaka or Tilapia please download all the annotated teseqs.fasta files [here](https://zenodo.org/record/13911872).
+If you would like to use FishPi on a reference genome other than Zebrafish (GRCz11), Medaka (oryLat2) or Tilapia (Onil_1.2), please prepare your "teseqs.fasta" file by following the same instructions written below, but by selecting appropriate organism on UCSC browser. Also check the piRNA:TE seed rules of your organism, as these can be customised pm the FishPi GUI. If you are working with the Zebrafish, Medaka or Tilapia please download all the annotated teseqs.fasta files from Zenodo [here](https://zenodo.org/records/13975588).
 
 To prepare your custom teseqs.fasta file:
 1. To generate a fasta file of the TE sequences for your reference genome, first make a .bed file. The UCSC table genome browser [here](https://genome.ucsc.edu/cgi-bin/hgTables) was used to generate the TE.bed file with these options: clade: Vertebrate, group: Variation and Repeats, genome: Zebrafish, assembly: May 2017 GRCz11, track: RepeatMasker, table: rmsk.
