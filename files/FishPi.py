@@ -427,9 +427,13 @@ def create_results() -> None:
     for i, te_type in enumerate(te_types):
         te_count = te_type_counts[te_type]
         p_value = binom.sf(te_count - 1, total_te_types, 1 / len(te_types))
+
+        # Print the p-value to the log/console
+        print(f"TE type: {te_type}, Count: {te_count}, p-value: {p_value:.4e}")
+
+        # Annotate the bar chart for significant enrichment
         if p_value < 0.05:
-            ax.text(i, counts[i] + 0.1, '*', color='black', fontsize=20,
-                    ha='center')
+            ax.text(i, counts[i] + 0.1, '*', color='black', fontsize=20, ha='center')
 
     if popup_window:
         popup_window.destroy()
