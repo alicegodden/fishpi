@@ -204,9 +204,8 @@ This project is distributed under the GNU General Public License (GPL), which en
 # Citation
 If you use FishPi in your research, please cite:
 
-FishPi: A Bioinformatic Prediction Tool to Link piRNA and Transposable Elements in Zebrafish
-Alice May Godden, Benjamin Rix, Simone Immler
-bioRxiv 2024.09.10.612046; DOI: https://doi.org/10.1101/2024.09.10.612046
+Godden, A.M., Rix, B. & Immler, S. FishPi: a bioinformatic prediction tool to link piRNA and transposable elements. Mobile DNA 16, 2 (2025). https://doi.org/10.1186/s13100-025-00342-3
+
 
 
 # Author & Contact
