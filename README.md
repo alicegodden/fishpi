@@ -1,6 +1,6 @@
 ![GitHub Logo](https://github.com/alicegodden/fishpi/blob/main/files/fishpi.png)
 
-[![FishPi Tests](https://github.com/alicegodden/fishpi/actions/workflows/python-test.yml/badge.svg)](https://github.com/alicegodden/fishpi/actions/workflows/python-test.yml)
+[![FishPi Tests](https://github.com/alicegodden/fishpi/actions/workflows/python-test.yml/badge.svg)](https://github.com/alicegodden/fishpi/actions/workflows/python-test.yml) 
 
 
 # FishPi: A Powerful Tool for piRNA Analysis
