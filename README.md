@@ -42,6 +42,9 @@ To prepare your custom teseqs.fasta file:
 
 
 ```bash
+# Obtain Hammel lab script makeTEgtf.pl:
+wget https://github.com/alicegodden/fishpi/blob/main/files/makeTEgtf.pl.gz
+
 # Run the following command to generate the `fish_TE.gtf` file using the `makeTEgtf.pl` script:
 perl makeTEgtf.pl -c 6 -s 7 -e 8 -o 10 -t 11 fish_rmsk > fish_TE.gtf
 
